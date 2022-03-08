@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Data records go here -->
+    <record id='srr_tax_support_action' model='ir.actions.act_window'>
+        <field name="name">Sustento Tributario</field>
+        <field name="res_model">account.sri.tax.support</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_action_sri_tax_support" name="Sustento Tributario"
+              action="srr_tax_support_action" parent="menu_utilities_sri"/>
+
+    <record id="sri_tax_support_view_form" model="ir.ui.view">
+        <field name="name">Formulario Sustento Tributario</field>
+        <field name="model">account.sri.tax.support</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <group>
+                        <field name="code"/>
+                        <field name="name"/>
+                        <field name="priority"/>
+                        <field name="enabled"/>
+                    </group>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record id="sri_tax_support_view_tree" model="ir.ui.view">
+        <field name="name">Lista de Forma de Pago</field>
+        <field name="model">account.sri.tax.support</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="code"/>
+                <field name="name"/>
+                <field name="priority"/>
+                <field name="enabled"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="sri_tax_support_view_search" model="ir.ui.view">
+        <field name="name">Busqueda Punto de Emisión</field>
+        <field name="model">account.sri.tax.support</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+            </search>
+        </field>
+    </record>
+
+
+</odoo>

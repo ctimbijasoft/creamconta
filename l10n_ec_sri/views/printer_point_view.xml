@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Data records go here -->
+    <record id='printer_point_action' model='ir.actions.act_window'>
+        <field name="name">Puntos de Emisión</field>
+        <field name="res_model">account.printer.point</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_action_utilities_payment_mode" name="Puntos de Emisión"
+              action="printer_point_action" parent="menu_utilities_sri"/>
+
+    <record id="printer_point_view_form" model="ir.ui.view">
+        <field name="name">Formulario Puntos de Emisión</field>
+        <field name="model">account.printer.point</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <group>
+                        <field name="printer_point"/>
+                        <field name="printer_point_address"/>
+                        <field name="sequence_id"/>
+                        <field name="sequence_number_next"/>
+                    </group>
+                    <group>
+                        <field name="enabled"/>
+                        <field name="electronic_documents"/>
+                        <field name="l10n_latam_document_type" />
+                        <field name="company_id" groups="base.group_multi_company"/>
+                    </group>
+                    <group>
+
+                    </group>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record id="printer_point_view_tree" model="ir.ui.view">
+        <field name="name">Lista de Puntos de Emisión</field>
+        <field name="model">account.printer.point</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="printer_point"/>
+                <field name="printer_point_address"/>
+                <field name="enabled"/>
+                <field name="electronic_documents"/>
+                <field name="l10n_latam_document_type"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="printer_point_view_search" model="ir.ui.view">
+        <field name="name">Busqueda Punto de Emisión</field>
+        <field name="model">account.printer.point</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="printer_point"/>
+            </search>
+        </field>
+    </record>
+
+
+</odoo>

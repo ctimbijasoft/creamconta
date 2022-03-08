@@ -1,0 +1,211 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* l10n_ec_sri
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-02-08 18:58+0000\n"
+"PO-Revision-Date: 2021-02-08 18:58+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: l10n_ec_sri
+#: model:ir.model.fields,field_description:l10n_ec_sri.field_account_printer_point__account_ids
+#: model:ir.model.fields,field_description:l10n_ec_sri.field_account_sri_payment_method__account_ids
+#: model:ir.model.fields,field_description:l10n_ec_sri.field_account_sri_tax_support__account_ids
+msgid "Account"
+msgstr "Cuenta"
+
+#. module: l10n_ec_sri
+#: model:ir.model.fields,field_description:l10n_ec_sri.field_account_printer_point__printer_point_address
+msgid "Address"
+msgstr "Dirección"
+
+#. module: l10n_ec_sri
+#: model:ir.model.fields,field_description:l10n_ec_sri.field_account_sri_payment_method__payment_method_code
+msgid "Code"
+msgstr "Codigo"
+
+#. module: l10n_ec_sri
+#: model:ir.model.fields,field_description:l10n_ec_sri.field_account_printer_point__create_uid
+#: model:ir.model.fields,field_description:l10n_ec_sri.field_account_sri_payment_method__create_uid
+#: model:ir.model.fields,field_description:l10n_ec_sri.field_account_sri_tax_support__create_uid
+msgid "Created by"
+msgstr "Created by"
+
+#. module: l10n_ec_sri
+#: model:ir.model.fields,field_description:l10n_ec_sri.field_account_printer_point__create_date
+#: model:ir.model.fields,field_description:l10n_ec_sri.field_account_sri_payment_method__create_date
+#: model:ir.model.fields,field_description:l10n_ec_sri.field_account_sri_tax_support__create_date
+msgid "Created on"
+msgstr "Creado en"
+
+#. module: l10n_ec_sri
+#: model:ir.model.fields,field_description:l10n_ec_sri.field_account_sri_tax_support__code
+msgid "Código"
+msgstr ""
+
+#. module: l10n_ec_sri
+#: model:ir.model.fields,field_description:l10n_ec_sri.field_account_bank_statement_line__partner_shipping_id
+#: model:ir.model.fields,field_description:l10n_ec_sri.field_account_move__partner_shipping_id
+#: model:ir.model.fields,field_description:l10n_ec_sri.field_account_payment__partner_shipping_id
+msgid "Delivery Address"
+msgstr "Dirección de entrega"
+
+#. module: l10n_ec_sri
+#: model:ir.model.fields,help:l10n_ec_sri.field_account_bank_statement_line__partner_shipping_id
+#: model:ir.model.fields,help:l10n_ec_sri.field_account_move__partner_shipping_id
+#: model:ir.model.fields,help:l10n_ec_sri.field_account_payment__partner_shipping_id
+msgid "Delivery address for current invoice."
+msgstr "Dirección de entrega de la factura actual."
+
+#. module: l10n_ec_sri
+#: model:ir.model.fields,field_description:l10n_ec_sri.field_account_move__display_name
+#: model:ir.model.fields,field_description:l10n_ec_sri.field_account_printer_point__display_name
+#: model:ir.model.fields,field_description:l10n_ec_sri.field_account_sri_payment_method__display_name
+#: model:ir.model.fields,field_description:l10n_ec_sri.field_account_sri_tax_support__display_name
+msgid "Display Name"
+msgstr "Nombre a Mostrar"
+
+#. module: l10n_ec_sri
+#: model:ir.model.fields,field_description:l10n_ec_sri.field_account_printer_point__electronic_documents
+msgid "Electronic Documents"
+msgstr "Documentos electronicos"
+
+#. module: l10n_ec_sri
+#: model:ir.model.fields,field_description:l10n_ec_sri.field_account_printer_point__enabled
+#: model:ir.model.fields,field_description:l10n_ec_sri.field_account_sri_payment_method__payment_method_available
+#: model:ir.model.fields,field_description:l10n_ec_sri.field_account_sri_tax_support__enabled
+msgid "Enabled"
+msgstr "Habilitado"
+
+#. module: l10n_ec_sri
+#: model:ir.model.fields,field_description:l10n_ec_sri.field_account_printer_point__sequence_id
+msgid "Entry Sequence"
+msgstr "Secuencia de entrada"
+
+#. module: l10n_ec_sri
+#: model:ir.actions.act_window,name:l10n_ec_sri.sri_payment_method_action
+#: model:ir.model.fields,field_description:l10n_ec_sri.field_account_bank_statement_line__sri_payment_method
+#: model:ir.model.fields,field_description:l10n_ec_sri.field_account_move__sri_payment_method
+#: model:ir.model.fields,field_description:l10n_ec_sri.field_account_payment__sri_payment_method
+#: model:ir.ui.menu,name:l10n_ec_sri.menu_action_sri_payment_method
+msgid "Forma de Pago"
+msgstr ""
+
+#. module: l10n_ec_sri
+#: model:ir.model.fields,field_description:l10n_ec_sri.field_account_move__id
+#: model:ir.model.fields,field_description:l10n_ec_sri.field_account_printer_point__id
+#: model:ir.model.fields,field_description:l10n_ec_sri.field_account_sri_payment_method__id
+#: model:ir.model.fields,field_description:l10n_ec_sri.field_account_sri_tax_support__id
+msgid "ID"
+msgstr ""
+
+#. module: l10n_ec_sri
+#: model:ir.model,name:l10n_ec_sri.model_account_move
+msgid "Journal Entry"
+msgstr "Asiento contable"
+
+#. module: l10n_ec_sri
+#: model:ir.model.fields,field_description:l10n_ec_sri.field_account_move____last_update
+#: model:ir.model.fields,field_description:l10n_ec_sri.field_account_printer_point____last_update
+#: model:ir.model.fields,field_description:l10n_ec_sri.field_account_sri_payment_method____last_update
+#: model:ir.model.fields,field_description:l10n_ec_sri.field_account_sri_tax_support____last_update
+msgid "Last Modified on"
+msgstr "Fecha de modificación"
+
+#. module: l10n_ec_sri
+#: model:ir.model.fields,field_description:l10n_ec_sri.field_account_printer_point__write_uid
+#: model:ir.model.fields,field_description:l10n_ec_sri.field_account_sri_payment_method__write_uid
+#: model:ir.model.fields,field_description:l10n_ec_sri.field_account_sri_tax_support__write_uid
+msgid "Last Updated by"
+msgstr "Última actualización por"
+
+#. module: l10n_ec_sri
+#: model:ir.model.fields,field_description:l10n_ec_sri.field_account_printer_point__write_date
+#: model:ir.model.fields,field_description:l10n_ec_sri.field_account_sri_payment_method__write_date
+#: model:ir.model.fields,field_description:l10n_ec_sri.field_account_sri_tax_support__write_date
+msgid "Last Updated on"
+msgstr "Ultima actualización en"
+
+#. module: l10n_ec_sri
+#: model:ir.model.fields,field_description:l10n_ec_sri.field_account_printer_point__printer_point
+#: model:ir.model.fields,field_description:l10n_ec_sri.field_account_sri_payment_method__payment_method_name
+msgid "Name"
+msgstr "Nombre"
+
+#. module: l10n_ec_sri
+#: model:ir.model.fields,field_description:l10n_ec_sri.field_account_printer_point__sequence_number_next
+msgid "Next Number"
+msgstr "Siguiente Numero"
+
+#. module: l10n_ec_sri
+#: model:ir.model.fields,field_description:l10n_ec_sri.field_account_sri_tax_support__name
+msgid "Nombre"
+msgstr ""
+
+#. module: l10n_ec_sri
+#: model:ir.model,name:l10n_ec_sri.model_account_sri_payment_method
+msgid "Payment Method"
+msgstr "Método de pago"
+
+#. module: l10n_ec_sri
+#: model:ir.model,name:l10n_ec_sri.model_account_printer_point
+#: model:ir.model.fields,field_description:l10n_ec_sri.field_account_bank_statement_line__printer_point
+#: model:ir.model.fields,field_description:l10n_ec_sri.field_account_move__printer_point
+#: model:ir.model.fields,field_description:l10n_ec_sri.field_account_payment__printer_point
+msgid "Printer Point"
+msgstr "Punto de Emisión"
+
+#. module: l10n_ec_sri
+#: model:ir.model.fields,field_description:l10n_ec_sri.field_account_sri_tax_support__priority
+msgid "Prioridad"
+msgstr ""
+
+#. module: l10n_ec_sri
+#: model:ir.actions.act_window,name:l10n_ec_sri.printer_point_action
+#: model:ir.ui.menu,name:l10n_ec_sri.menu_action_utilities_payment_mode
+msgid "Puntos de Emisión"
+msgstr ""
+
+#. module: l10n_ec_sri
+#: model:ir.model.fields,field_description:l10n_ec_sri.field_account_bank_statement_line__ref_account
+#: model:ir.model.fields,field_description:l10n_ec_sri.field_account_move__ref_account
+#: model:ir.model.fields,field_description:l10n_ec_sri.field_account_payment__ref_account
+msgid "Referencia Factura"
+msgstr ""
+
+#. module: l10n_ec_sri
+#: model:ir.actions.act_window,name:l10n_ec_sri.srr_tax_support_action
+#: model:ir.model,name:l10n_ec_sri.model_account_sri_tax_support
+#: model:ir.model.fields,field_description:l10n_ec_sri.field_account_bank_statement_line__tax_support_id
+#: model:ir.model.fields,field_description:l10n_ec_sri.field_account_move__tax_support_id
+#: model:ir.model.fields,field_description:l10n_ec_sri.field_account_payment__tax_support_id
+#: model:ir.ui.menu,name:l10n_ec_sri.menu_action_sri_tax_support
+msgid "Sustento Tributario"
+msgstr ""
+
+#. module: l10n_ec_sri
+#: model:ir.model.fields,help:l10n_ec_sri.field_account_printer_point__sequence_number_next
+msgid "The next sequence number will be used for the next invoice."
+msgstr "El siguiente número de secuencia se utilizará para la próxima factura."
+
+#. module: l10n_ec_sri
+#: model:ir.model.fields,help:l10n_ec_sri.field_account_printer_point__sequence_id
+msgid ""
+"This field contains the information related to the numbering of the journal "
+"entries of this journal."
+msgstr ""
+"Este campo contiene la información relacionada con la numeración de "
+"los puntos de emision de este diario."
+
+#. module: l10n_ec_sri
+#: model:ir.ui.menu,name:l10n_ec_sri.menu_utilities_sri
+msgid "Utilidades SRI"
+msgstr ""

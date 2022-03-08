@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Data records go here -->
+    <record id='sri_payment_method_action' model='ir.actions.act_window'>
+        <field name="name">Forma de Pago</field>
+        <field name="res_model">account.sri.payment.method</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_action_sri_payment_method" name="Forma de Pago"
+              action="sri_payment_method_action" parent="menu_utilities_sri"/>
+
+    <record id="sri_payment_method_view_form" model="ir.ui.view">
+        <field name="name">Formulario Forma de Pago</field>
+        <field name="model">account.sri.payment.method</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <group>
+                        <field name="payment_method_code"/>
+                        <field name="payment_method_name"/>
+                        <field name="payment_method_available"/>
+                    </group>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record id="sri_payment_method_view_tree" model="ir.ui.view">
+        <field name="name">Lista de Forma de Pago</field>
+        <field name="model">account.sri.payment.method</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="payment_method_code"/>
+                <field name="payment_method_name"/>
+                <field name="payment_method_available"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="sri_payment_method_view_search" model="ir.ui.view">
+        <field name="name">Busqueda Metodo de Pago</field>
+        <field name="model">account.sri.payment.method</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="payment_method_name"/>
+            </search>
+        </field>
+    </record>
+
+
+</odoo>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+
+        <record id="ec_payment_method_15" model="account.sri.payment.method">
+            <field name="payment_method_code">01</field>
+            <field name="payment_method_name">(01) Sin utilización del sistema financiero</field>
+            <field name="payment_method_available">1</field>
+        </record>
+
+        <record id="ec_payment_method_01" model="account.sri.payment.method">
+            <field name="payment_method_code">15</field>
+            <field name="payment_method_name">(15) Compensación de deudas</field>
+            <field name="payment_method_available">1</field>
+        </record>
+
+
+
+        <record id="ec_payment_method_16" model="account.sri.payment.method">
+            <field name="payment_method_code">16</field>
+            <field name="payment_method_name">(16) Tarjeta de débito</field>
+            <field name="payment_method_available">1</field>
+        </record>
+
+        <record id="ec_payment_method_18" model="account.sri.payment.method">
+            <field name="payment_method_code">18</field>
+            <field name="payment_method_name">(18) Tarjeta prepago</field>
+            <field name="payment_method_available">1</field>
+        </record>
+
+        <record id="ec_payment_method_19" model="account.sri.payment.method">
+            <field name="payment_method_code">19</field>
+            <field name="payment_method_name">(19) Tarjeta de crédito</field>
+            <field name="payment_method_available">1</field>
+        </record>
+
+        <record id="ec_payment_method_20" model="account.sri.payment.method">
+            <field name="payment_method_code">20</field>
+            <field name="payment_method_name">(20) Otros con utilización del sistema financiero</field>
+            <field name="payment_method_available">1</field>
+        </record>
+
+    </data>
+</odoo>

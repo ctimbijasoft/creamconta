@@ -1,0 +1,7 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_printer_point_all,access.printer_point.all,model_account_printer_point,"",1,0,0,0
+access_printer_point_account_manager,access.printer_point.account_manager,model_account_printer_point,account.group_account_manager,1,1,1,0
+access_payment_method_all,access.payment_method.all,model_account_sri_payment_method,,1,0,0,0
+access_payment_method_account_manager,access.payment_method.account_manager,model_account_sri_payment_method,account.group_account_manager,1,1,1,0
+access_tax_support_all,access.tax_support.all,model_account_sri_tax_support,,1,0,0,0
+access_tax_support_account_manager,access.tax_support.account_manager,model_account_sri_tax_support,account.group_account_manager,1,1,1,0
