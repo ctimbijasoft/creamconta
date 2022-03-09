@@ -666,6 +666,10 @@ class AccountMove(models.Model):
     def _post(self, soft=True):
 
         result = super()._post(soft)
+
+        if self.env.company.country_id.code != 'EC':
+            return result
+
         _logger.warning(19)
         try:
             if self.move_type:
