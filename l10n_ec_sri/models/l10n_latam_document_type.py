@@ -31,7 +31,7 @@ class L10nLatamDocumentType(models.Model):
                 punto_emision = parts[1].zfill(3)
                 numero = parts[2].zfill(10)
                 number = establecimiento + '-' + punto_emision + '-' + numero
-                _logger.warning(number)
+                _logger.info(number)
                 return number
             else:
                 raise ValidationError('Verificar que el número de documento sea de la forma ###-###-########## (ejemplo: 001-001-0001234567)')

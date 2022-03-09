@@ -20,7 +20,7 @@ _logger = logging.getLogger(__name__)
 try:
     from OpenSSL import crypto
 except ImportError:
-    _logger.warning('OpenSSL library not found. If you plan to use l10n_ec_edi, please install the library from https://pypi.python.org/pypi/pyOpenSSL')
+    _logger.info('OpenSSL library not found. If you plan to use l10n_ec_edi, please install the library from https://pypi.python.org/pypi/pyOpenSSL')
 
 from pytz import timezone
 
@@ -102,9 +102,9 @@ class Certificate(models.Model):
         Metodo que aplica la firma digital al XML
         TODO: Revisar return
         """
-        _logger.warning('103 sign')
+        _logger.info('103 sign')
         xml_str = xml_document#.encode('utf-8')
-        _logger.warning(xml_str)
+        _logger.info(xml_str)
 
         os.chdir(".")
 
@@ -146,7 +146,7 @@ class Certificate(models.Model):
             '-jar',
             firma_path
         ]'''
-        _logger.warning(command)
+        _logger.info(command)
 
         try:
             subprocess.check_output(command)
@@ -197,16 +197,16 @@ class Certificate(models.Model):
     def get_valid_certificate(self):
         '''Search for a valid certificate that is available and not expired.
         '''
-        _logger.warning('get_valid_certificate')
+        _logger.info('get_valid_certificate')
         mexican_dt = self.get_mx_current_datetime()
-        _logger.warning(mexican_dt)
-        _logger.warning(self)
+        _logger.info(mexican_dt)
+        _logger.info(self)
         for record in self:
-            _logger.warning(record)
+            _logger.info(record)
             date_start = str_to_datetime(record.date_start)
             date_end = str_to_datetime(record.date_end)
-            _logger.warning(date_start)
-            _logger.warning(date_end)
+            _logger.info(date_start)
+            _logger.info(date_end)
             if date_start <= mexican_dt <= date_end:
                 return record
         return None
@@ -220,7 +220,7 @@ class Certificate(models.Model):
         cadena_crypted = cadena_crypted.replace(b'i18n/dictionaries/ - MITyCLibXAdES - en', b'')
 
         cadena_crypted = cadena_crypted[1:]
-        #_logger.warning(cadena_crypted)
+        #_logger.info(cadena_crypted)
 
         return cadena_crypted
 
@@ -231,7 +231,7 @@ class Certificate(models.Model):
         '''
         mexican_tz = timezone('America/Guayaquil')
         mexican_dt = self.get_mx_current_datetime()
-        _logger.warning('date');
+        _logger.info('date');
         date_format = '%Y%m%d%H%M%SZ'
         for record in self:
             # Try to decrypt the certificate

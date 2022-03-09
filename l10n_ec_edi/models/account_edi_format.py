@@ -31,21 +31,21 @@ class AccountEdiFormat(models.Model):
 
     @api.model
     def _l10n_ec_edi_get_serie_and_folio(self, move):
-        _logger.warning(36)
-        _logger.warning(move.name)
-        _logger.warning(move.printer_point)
-        _logger.warning(move.printer_point.printer_point)
-        _logger.warning(move.printer_point.id)
+        _logger.info(36)
+        _logger.info(move.name)
+        _logger.info(move.printer_point)
+        _logger.info(move.printer_point.printer_point)
+        _logger.info(move.printer_point.id)
         if not move.printer_point.printer_point:
-            _logger.warning("cambiando printer point")
+            _logger.info("cambiando printer point")
             printer_point_id = self.env['account.printer.point'].search([
                 ('id', '=', int(move.printer_point.id))
             ])
-            _logger.warning(printer_point_id)
-            _logger.warning(printer_point_id.printer_point)
-            _logger.warning(printer_point_id.printer_point_address)
+            _logger.info(printer_point_id)
+            _logger.info(printer_point_id.printer_point)
+            _logger.info(printer_point_id.printer_point_address)
             move.printer_point = printer_point_id
-            _logger.warning(move.printer_point.printer_point_address)
+            _logger.info(move.printer_point.printer_point_address)
         if move.printer_point.printer_point:
             printer_point = move.printer_point.printer_point.split('-')
             establecimiento = printer_point[0]
@@ -53,7 +53,7 @@ class AccountEdiFormat(models.Model):
         else:
             try:
                 printer_point = move.name.split(' ')[1].split('-')
-                _logger.warning(move.printer_point)
+                _logger.info(move.printer_point)
                 establecimiento = printer_point[0]
                 punto_emision = printer_point[1]
             except Exception as e:
@@ -93,13 +93,13 @@ class AccountEdiFormat(models.Model):
 
         errors = []
 
-        _logger.warning(company)
-        _logger.warning(company.sudo().l10n_ec_edi_certificate_ids)
+        _logger.info(company)
+        _logger.info(company.sudo().l10n_ec_edi_certificate_ids)
 
         # == Check the certificate ==
         certificate = company.l10n_ec_edi_certificate_ids.sudo().get_valid_certificate()
 
-        _logger.warning(certificate)
+        _logger.info(certificate)
         if not certificate:
             errors.append(_('No valid certificate found'))
 
@@ -188,12 +188,12 @@ class AccountEdiFormat(models.Model):
                                                                                                                 (
                                                                                                                             ' y ' + supplier.street2) if supplier.street2 else ''
 
-        _logger.warning(147)
-        _logger.warning(move.printer_point.printer_point)
+        _logger.info(147)
+        _logger.info(move.printer_point.printer_point)
 
         if not move.l10n_ec_edi_sri_uuid:
-            _logger.warning(173)
-            _logger.warning("Generando nuevo access key")
+            _logger.info(173)
+            _logger.info("Generando nuevo access key")
             _logger.info(move.sequence_number)
             _logger.info(numerico)
             _logger.info(tipo_emision)
@@ -218,8 +218,8 @@ class AccountEdiFormat(models.Model):
             digito_validador = _get_digito_validador(access_key[::-1])
             access_key += str(digito_validador)
         else:
-            _logger.warning(188)
-            _logger.warning("Modificando Documento SRI")
+            _logger.info(188)
+            _logger.info("Modificando Documento SRI")
             access_key = move.l10n_ec_edi_sri_uuid
 
         if not customer:
@@ -332,7 +332,7 @@ class AccountEdiFormat(models.Model):
             })
 
             sri_values['tax_details'][tax]['total'] += tax_res['amount']
-            _logger.warning(sri_values['tax_details'])
+            _logger.info(sri_values['tax_details'])
 
         sri_values['tax_details'] = list(sri_values['tax_details'].values())
         sri_values['tax_details_transferred'] = [tax_res for tax_res in sri_values['tax_details'] if
@@ -420,8 +420,8 @@ class AccountEdiFormat(models.Model):
                     sri_values['tax_amount']['base12']['total_base'] += taxs['base']
                     sri_values['tax_amount']['base12']['total_value'] += taxs['total']
 
-        _logger.warning(329)
-        _logger.warning(sri_values['tax_amount'])
+        _logger.info(329)
+        _logger.info(sri_values['tax_amount'])
 
         sri_values['tax_amount']['base0']['total_value'] = round(sri_values['tax_amount']['base0']['total_value'], 2)
         sri_values['tax_amount']['base0']['total_base'] = round(sri_values['tax_amount']['base0']['total_base'], 2)
@@ -480,7 +480,7 @@ class AccountEdiFormat(models.Model):
         '''
 
         # == SRI values ==
-        _logger.warning('321')
+        _logger.info('321')
         sri_values = self._l10n_ec_edi_get_invoice_sri_values(invoice)
 
         # == Generate the SRI ==
@@ -681,8 +681,8 @@ class AccountEdiFormat(models.Model):
 
     def _l10n_ec_edi_sri_reception(self, move, credentials, document):
         # credentials.reception_url = 'https://celcer.sri.gob.ec/comprobantes-electronicos-ws/RecepcionComprobantesOffline?wsdl'
-        #_logger.warning(credentials['reception_url'])
-        #_logger.warning(document)
+        #_logger.info(credentials['reception_url'])
+        #_logger.info(document)
         try:
             transport = Transport(timeout=60)
             client = Client(credentials['reception_url'], transport=transport)
@@ -694,7 +694,7 @@ class AccountEdiFormat(models.Model):
                 'errors': [_("The SRI service failed to validate with the following error: %s", str(e))],
             }
 
-        _logger.warning(response)
+        _logger.info(response)
         if response.estado != 'RECIBIDA':
             errors = []
 
@@ -706,7 +706,7 @@ class AccountEdiFormat(models.Model):
                     else:
                         errors.append(_("Error : %s") % mensaje.informacionAdicional)
 
-            _logger.warning(len([x for x in errors if 'CLAVE ACCESO REGISTRADA' in x]))
+            _logger.info(len([x for x in errors if 'CLAVE ACCESO REGISTRADA' in x]))
             if len([x for x in errors if 'CLAVE ACCESO REGISTRADA' in x]) == 0:
                 return {'errors': errors}
 
@@ -1007,9 +1007,9 @@ class AccountEdiFormat(models.Model):
         return response_json
 
     def _l10n_ec_edi_sw_sign(self, move, credentials, sri):
-        _logger.warning(sri)
+        _logger.info(sri)
         sri_b64 = base64.encodebytes(sri).decode('UTF-8')
-        _logger.warning(sri_b64)
+        _logger.info(sri_b64)
         random_values = [random.choice(string.ascii_letters + string.digits) for n in range(30)]
         boundary = ''.join(random_values)
         payload = """--%(boundary)s
@@ -1144,7 +1144,7 @@ Content-Disposition: form-data; name="xml"; filename="xml"
             ('edi_state', 'in', ['to_send']),
             ('l10n_ec_edi_sat_status', 'not in', ['valid'])
         ], limit=1)
-        _logger.warning(to_process)
+        _logger.info(to_process)
         invoices = set()
         invoices.add(to_process)
 
@@ -1157,9 +1157,9 @@ Content-Disposition: form-data; name="xml"; filename="xml"
 
     def _post_invoice_edi(self, invoices, test_mode=False):
         # OVERRIDE
-        _logger.warning("1070 ")
-        _logger.warning(self)
-        _logger.warning(len(invoices))
+        _logger.info("1070 ")
+        _logger.info(self)
+        _logger.info(len(invoices))
 
         edi_result = super()._post_invoice_edi(invoices, test_mode=test_mode)
 
@@ -1170,22 +1170,22 @@ Content-Disposition: form-data; name="xml"; filename="xml"
             if not invoice.id:
                 return edi_result
 
-            _logger.warning(invoice.id)
-            _logger.warning("1076 " + invoice.move_type + " " + invoice.edi_state)
+            _logger.info(invoice.id)
+            _logger.info("1076 " + invoice.move_type + " " + invoice.edi_state)
 
 
             if invoice.move_type in ('out_invoice', 'out_refund') and invoice.edi_state == 'to_send' and invoice.printer_point and invoice.l10n_latam_document_type_id.code:
 
                 env_name = invoice.company_id.l10n_ec_edi_pac
-                _logger.warning(1062)
-                _logger.warning(env_name)
-                _logger.warning(invoice.state)
-                _logger.warning(invoice.name)
+                _logger.info(1062)
+                _logger.info(env_name)
+                _logger.info(invoice.state)
+                _logger.info(invoice.name)
 
                 # == Check the configuration ==
                 if env_name != 'demo':
                     errors = self._l10n_ec_edi_check_configuration(invoice)
-                    _logger.warning(errors)
+                    _logger.info(errors)
                     if errors:
                         edi_result[invoice] = {
                             'error': self._l10n_ec_edi_format_error_message(_("Invalid configuration:"), errors),
@@ -1205,7 +1205,7 @@ Content-Disposition: form-data; name="xml"; filename="xml"
 
 
                 if not invoice.l10n_ec_edi_sri_uuid:
-                    _logger.warning("not invoice.l10n_ec_edi_sri_uuid")
+                    _logger.info("not invoice.l10n_ec_edi_sri_uuid")
                     invoice.l10n_ec_edi_sri_uuid = res['sri_uuid']
 
                 # == Call the web-service ==
@@ -1258,7 +1258,7 @@ Content-Disposition: form-data; name="xml"; filename="xml"
                 )
                 invoice.edi_state = 'sent'
             else:
-                _logger.warning("NO EDI " + invoice.move_type + " - " + invoice.name + " " + invoice.edi_state)
+                _logger.info("NO EDI " + invoice.move_type + " - " + invoice.name + " " + invoice.edi_state)
         return edi_result
 
     def _create_invoice_sri_attachment(self, invoice, data):
@@ -1288,22 +1288,22 @@ Content-Disposition: form-data; name="xml"; filename="xml"
 
     def _cancel_invoice_edi(self, invoices, test_mode=False):
         # OVERRIDE
-        _logger.warning('_cancel_invoice_edi')
+        _logger.info('_cancel_invoice_edi')
         edi_result = super()._cancel_invoice_edi(invoices, test_mode=test_mode)
         if self.code != 'sri_ec':
             return edi_result
 
         for invoice in invoices:
-            _logger.warning(1153)
-            _logger.warning(invoice.edi_state)
-            _logger.warning(invoice.l10n_ec_edi_sat_status)
+            _logger.info(1153)
+            _logger.info(invoice.edi_state)
+            _logger.info(invoice.l10n_ec_edi_sat_status)
             if invoice.edi_state == 'sent' and invoice.l10n_ec_edi_sat_status == 'valid':
-                _logger.warning('error')
+                _logger.info('error')
                 edi_result[invoice] = {
                     'error': 'Comprobante no puede ser cancelado, ya se encuentra autorizado o aún no ha sido enviado'}
                 continue
             else:
-                _logger.warning('to_send')
+                _logger.info('to_send')
                 invoice.edi_state = 'to_send'
 
 

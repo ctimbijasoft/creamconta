@@ -11,15 +11,15 @@ class AccountInvoiceSend(models.TransientModel):
     _inherit = 'account.invoice.send'
 
     def send_mail_edi(self):
-        _logger.warning('send_mail_edi')
-        _logger.warning(self.template_id)
+        _logger.info('send_mail_edi')
+        _logger.info(self.template_id)
         #self.ensure_one()
         # Send the mails in the correct language by splitting the ids per lang.
         # This should ideally be fixed in mail_compose_message, so when a fix is made there this whole commit should be reverted.
         # basically self.body (which could be manually edited) extracts self.template_id,
         # which is then not translated for each customer.
         if self.composition_mode == 'mass_mail' and self.template_id:
-            _logger.warning('send_mail_edi mass_mail')
+            _logger.info('send_mail_edi mass_mail')
             active_ids = self.env.context.get('active_ids', self.res_id)
             active_records = self.env[self.model].browse(active_ids)
             langs = active_records.mapped('partner_id.lang')
@@ -30,7 +30,7 @@ class AccountInvoiceSend(models.TransientModel):
                 self_lang.onchange_template_id()
                 self_lang._send_email()
         else:
-            _logger.warning('send_mail_edi direct')
+            _logger.info('send_mail_edi direct')
             self._send_email()
 
 

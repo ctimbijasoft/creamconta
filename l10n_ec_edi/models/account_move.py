@@ -53,7 +53,7 @@ class AccountMove(models.Model):
         string="Posted Time", readonly=True, copy=False,
         help="Keep empty to use the current México central time")
     l10n_ec_edi_auth_time = fields.Datetime(
-        string="Posted Time", readonly=True, copy=False,
+        string="Posted AUTH Time", readonly=True, copy=False,
         help="Keep empty to use the current México central time")
     l10n_ec_edi_amount_iva = fields.Monetary(string='Subtotal IVA', copy=False, readonly=True,
         help='The total amount reported on the sri with IVA',
@@ -184,8 +184,8 @@ class AccountMove(models.Model):
         # Find a signed sri.
         if not sri_data:
             signed_edi = self._get_l10n_ec_edi_signed_edi_document()
-            _logger.warning(166)
-            _logger.warning(signed_edi)
+            _logger.info(166)
+            _logger.info(signed_edi)
             if signed_edi:
                 sri_data = base64.decodebytes(signed_edi.attachment_id.with_context(bin_size=False).datas)
 
@@ -193,15 +193,15 @@ class AccountMove(models.Model):
         if not sri_data:
             return {}
         _logger.info(172)
-        _logger.warning(sri_data)
+        _logger.info(sri_data)
         '''sri_node = fromstring(sri_data)
         tfd_node = get_node(
             sri_node,
             'tfd:TimbreFiscalDigital[1]',
             {'tfd': 'http://www.sat.gob.mx/TimbreFiscalDigital'},
         )
-        _logger.warning(180)
-        _logger.warning(sri_node)'''
+        _logger.info(180)
+        _logger.info(sri_node)'''
 
         return {
             'uuid': ({} if tfd_node is None else tfd_node).get('UUID'),
@@ -311,7 +311,7 @@ class AccountMove(models.Model):
 
     @api.depends('amount_by_group')
     def _compute_amount_taxes(self):
-        _logger.warning('l10n_ec_edi_amount_iva_zero')
+        _logger.info('l10n_ec_edi_amount_iva_zero')
         amount_iva = 0.0
         for move in self:
             for tax in move.amount_by_group:
@@ -426,15 +426,15 @@ class AccountMove(models.Model):
                 'errors': [_("The SRI service failed to validate with the following error: %s", str(e))],
             }
 
-        #_logger.warning(response.autorizaciones)
+        #_logger.info(response.autorizaciones)
         errors = []
 
         for autorizacion in response.autorizaciones['autorizacion']:
             autorizacion.comprobante = ''
-            _logger.warning(autorizacion)
+            _logger.info(autorizacion)
             errors.append(_("Clave de acceso : %s") % response.claveAccesoConsultada)
-            _logger.warning(412)
-            _logger.warning(autorizacion.estado)
+            _logger.info(412)
+            _logger.info(autorizacion.estado)
             if autorizacion.estado == 'AUTORIZADO':
                 for move in self:
                     move.l10n_ec_edi_auth_time = autorizacion.fechaAutorizacion.utcnow()
@@ -467,9 +467,9 @@ class AccountMove(models.Model):
     def button_cancel_posted_moves(self):
         # OVERRIDE
         for invoice in self:
-            _logger.warning(476)
-            _logger.warning(invoice.edi_state)
-            _logger.warning(invoice.l10n_ec_edi_sat_status)
+            _logger.info(476)
+            _logger.info(invoice.edi_state)
+            _logger.info(invoice.l10n_ec_edi_sat_status)
             if invoice.l10n_ec_edi_sat_status == 'valid':
                 raise ValidationError(_(
                     '%s ') % 'Comprobante no puede ser cancelado, ya se encuentra autorizado o aún no ha sido enviado')
@@ -492,13 +492,13 @@ class AccountMove(models.Model):
 
         edi_result = {}
 
-        _logger.warning(423)
+        _logger.info(423)
         for move in self:
-            _logger.warning(425)
-            _logger.warning(move)
+            _logger.info(425)
+            _logger.info(move)
 
             env_name = move.company_id.l10n_ec_edi_pac
-            _logger.warning(env_name)
+            _logger.info(env_name)
 
             credentials = move._l10n_ec_edi_get_edi_credentials(env_name)
             _logger.info(975),
@@ -523,7 +523,7 @@ class AccountMove(models.Model):
                 else:
                     status = 'OK'
 
-                _logger.warning(status)
+                _logger.info(status)
                 if status == 'OK':
                     move.l10n_ec_edi_sat_status = 'valid'
 
@@ -670,19 +670,19 @@ class AccountMove(models.Model):
         if self.env.company.country_id.code != 'EC':
             return result
 
-        _logger.warning(19)
+        _logger.info(19)
         try:
             if self.move_type:
                 if self.move_type in ['out_invoice', 'out_refund'] and not self.l10n_ec_edi_sri_uuid:
                     self.l10n_ec_edi_sri_uuid = self.get_access_key()
-                    _logger.warning(self.l10n_ec_edi_sri_uuid)
+                    _logger.info(self.l10n_ec_edi_sri_uuid)
         except Exception:
             _logger.exception("tools.email_send failed to deliver email")
 
         return result
 
     def get_access_key(self):
-        _logger.warning(26)
+        _logger.info(26)
         for move in self:
             if not self.l10n_ec_edi_sri_uuid:
                 printer_point = move.printer_point.printer_point
@@ -693,10 +693,10 @@ class AccountMove(models.Model):
                              move.company_id.vat + environment + (printer_point + '').replace('-', '') + \
                              str(move.sequence_number).zfill(9) + str(numerico).zfill(8) + tipo_emision
 
-                _logger.warning(access_key[::-1])
+                _logger.info(access_key[::-1])
 
                 digito_validador = self._get_digito_validador(access_key[::-1])
-                _logger.warning(access_key[::-1])
+                _logger.info(access_key[::-1])
                 access_key += str(digito_validador)
                 return access_key
             else:
@@ -757,10 +757,10 @@ class AccountMove(models.Model):
         for invoice in self.filtered(lambda x: x.move_type == 'out_invoice'):
             # send template only on customer invoice
             # subscribe the partner to the invoice
-            _logger.warning('invoice_validate_send_email')
-            _logger.warning(invoice.partner_id.id)
+            _logger.info('invoice_validate_send_email')
+            _logger.info(invoice.partner_id.id)
             if invoice.company_id.l10n_ec_edi_mail_template_id:
-                _logger.warning('invoice_validate_send_email send 2222')
+                _logger.info('invoice_validate_send_email send 2222')
                 invoice.message_subscribe([invoice.partner_id.id])
                 invoice.message_post_with_template(
                     invoice.company_id.l10n_ec_edi_mail_template_id.id,

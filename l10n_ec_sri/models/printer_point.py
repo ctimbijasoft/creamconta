@@ -20,14 +20,14 @@ class AccountMove(models.Model):
     @api.depends('posted_before', 'state', 'journal_id', 'date')
     def _compute_name(self):
         for move in self:
-            _logger.warning(232323)
-            _logger.warning(move.move_type)
-            _logger.warning(move.name)
-            _logger.warning(move.printer_point.sequence_id.name)
+            _logger.info(232323)
+            _logger.info(move.move_type)
+            _logger.info(move.name)
+            _logger.info(move.printer_point.sequence_id.name)
             if move.move_type == 'out_refund' and move.name == False:
                 move.printer_point = move.company_id.l10n_ec_edi_nc_printer_point
 
-            #_logger.warning(move.printer_point.sequence_id.name)
+            #_logger.info(move.printer_point.sequence_id.name)
             if not move.printer_point.sequence_id:
                 return super(AccountMove, self)._compute_name()
             sequence_id = move._get_sequence()
@@ -53,8 +53,8 @@ class AccountMove(models.Model):
         '''
         self.ensure_one()
 
-        _logger.warning(42)
-        _logger.warning(self.move_type)
+        _logger.info(42)
+        _logger.info(self.move_type)
         printer_point = self.printer_point
         if self.move_type in ('entry', 'out_invoice', 'in_invoice', 'out_receipt', 'in_receipt', 'out_refund'):
             return printer_point.sequence_id
