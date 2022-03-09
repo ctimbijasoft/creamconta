@@ -1,0 +1,90 @@
+<factura id="comprobante" version="1.1.0">
+                <infoTributaria>
+                    <ambiente>1</ambiente>
+                    <tipoEmision>1</tipoEmision>
+                    <razonSocial>Jasoft Matriz</razonSocial>
+                    <nombreComercial>Jasoft</nombreComercial>
+                    <ruc>0190368785001</ruc>
+                    <claveAcceso>2103202101019036878500110010010000000559997602717</claveAcceso>
+                    <codDoc>01</codDoc>
+                    <estab>001</estab>
+                    <ptoEmi>001</ptoEmi>
+                    <secuencial>000000055</secuencial>
+                    <dirMatriz>Av. 10 de Agosto</dirMatriz>
+                </infoTributaria>
+                <infoFactura>
+                    <fechaEmision>21/03/2021</fechaEmision>
+                    <dirEstablecimiento>Alfonso Cordero</dirEstablecimiento>
+                    <obligadoContabilidad>NO</obligadoContabilidad>
+                    <tipoIdentificacionComprador>07</tipoIdentificacionComprador>
+                    <razonSocialComprador>CONSUMIDOR FINAL</razonSocialComprador>
+                    <identificacionComprador>9999999999999</identificacionComprador>
+                    <totalSinImpuestos>0.04</totalSinImpuestos>
+                    <totalDescuento>3.56</totalDescuento>
+                    <totalConImpuestos>
+                        <totalImpuesto>
+                            <codigo>2</codigo>
+                            <codigoPorcentaje>0</codigoPorcentaje>
+                            <baseImponible>0.0</baseImponible>
+                            <valor>0.0</valor>
+                        </totalImpuesto>
+                        <totalImpuesto>
+                            <codigo>2</codigo>
+                            <codigoPorcentaje>2</codigoPorcentaje>
+                            <baseImponible>0.04</baseImponible>
+                            <valor>0.0</valor>
+                        </totalImpuesto>
+                    </totalConImpuestos>
+                    <propina>0.0</propina>
+                    <importeTotal>0.04 </importeTotal>
+                    <moneda>DOLAR</moneda>
+                    <pagos>
+                        <pago>
+                            <formaPago>01</formaPago>
+                            <total>0.04</total>
+                            <plazo>0</plazo>
+                            <unidadTiempo>dias</unidadTiempo>
+                        </pago>
+                    </pagos>
+                </infoFactura>
+                <detalles>
+                    
+                        
+                        <detalle>
+                            <codigoPrincipal>CONS_0001</codigoPrincipal>
+                            <codigoAuxiliar>CONS_0001</codigoAuxiliar>
+                            <descripcion>[CONS_0001] Pluma de Pizarra</descripcion>
+                            <cantidad>3.00</cantidad>
+                            <precioUnitario>1.20</precioUnitario>
+                            <descuento>3.56</descuento>
+                            <precioTotalSinImpuesto>0.04</precioTotalSinImpuesto>
+                            <detallesAdicionales>
+                                <detAdicional nombre="null" valor="null"></detAdicional>
+                            </detallesAdicionales>
+                            <impuestos>
+                                
+                                    
+                                        <impuesto>
+                                            <codigo>2</codigo>
+                                            <codigoPorcentaje>2</codigoPorcentaje>
+                                            <tarifa>12.0</tarifa>
+                                            <baseImponible>0.04</baseImponible>
+                                            <valor>0.00</valor>
+                                        </impuesto>
+                                    
+                            </impuestos>
+                        </detalle>
+                    
+                </detalles>
+                <infoAdicional>
+                    
+                    
+                    <campoAdicional nombre="Direccion">
+                        Ecuador
+                    </campoAdicional>
+                    <campoAdicional nombre="Telefono">
+                        
+                    </campoAdicional>
+                    
+                </infoAdicional>
+            </factura>

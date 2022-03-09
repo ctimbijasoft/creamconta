@@ -1,0 +1,199 @@
+{
+  'serie_number': 'Fact. ',
+  'folio_number': '20',
+  'certificate': l10n_ec_edi.certificate(1,
+  ),
+  'environment': '1',
+  'access_key': '0102202101019036878500110010010000000201107998214',
+  'record': account.move(22,
+  ),
+  'sri_date': '',
+  'supplier': res.partner(41,
+  ),
+  'customer': res.partner(110,
+  ),
+  'supplier_address': 'Alfonso Moreno Mora 5-12',
+  'currency_precision': 2,
+  'format_string': <function
+  AccountEdiFormat._l10n_ec_edi_get_common_sri_values.<locals>._format_string_sri
+  at
+  0x7fae77de8f28>,
+  'format_float': <function
+  AccountEdiFormat._l10n_ec_edi_get_common_sri_values.<locals>._format_float_sri
+  at
+  0x7fae77de8d08>,
+  'document_type': 'I',
+  'currency_name': 'USD',
+  'payment_method_code': '',
+  'payment_policy': '',
+  'currency_conversion_rate': None,
+  'account_4num': '8977',
+  'invoice_line_values': [
+    {
+      'line': account.move.line(71,
+      ),
+      'price_unit_wo_discount': 147.0,
+      'total_wo_discount': 147.0,
+      'discount_amount': 0.0,
+      'price_subtotal_unit': 147.0,
+      'tax_details': [
+        {
+          'tax': account.tax(1,
+          ),
+          'base': 147.0,
+          'tax_amount': 0.12,
+          'tax_name': None,
+          'total': 17.64
+        }
+      ],
+      'tax_details_transferred': [
+        {
+          'tax': account.tax(1,
+          ),
+          'base': 147.0,
+          'tax_amount': 0.12,
+          'tax_name': None,
+          'total': 17.64
+        }
+      ],
+      'tax_details_withholding': []
+    },
+    {
+      'line': account.move.line(72,
+      ),
+      'price_unit_wo_discount': 79.0,
+      'total_wo_discount': 79.0,
+      'discount_amount': 0.0,
+      'price_subtotal_unit': 79.0,
+      'tax_details': [
+        {
+          'tax': account.tax(1,
+          ),
+          'base': 79.0,
+          'tax_amount': 0.12,
+          'tax_name': None,
+          'total': 9.48
+        }
+      ],
+      'tax_details_transferred': [
+        {
+          'tax': account.tax(1,
+          ),
+          'base': 79.0,
+          'tax_amount': 0.12,
+          'tax_name': None,
+          'total': 9.48
+        }
+      ],
+      'tax_details_withholding': []
+    },
+    {
+      'line': account.move.line(73,
+      ),
+      'price_unit_wo_discount': 47.0,
+      'total_wo_discount': 47.0,
+      'discount_amount': 0.0,
+      'price_subtotal_unit': 47.0,
+      'tax_details': [
+        {
+          'tax': account.tax(3,
+          ),
+          'base': 47.0,
+          'tax_amount': 0.0,
+          'tax_name': None,
+          'total': 0.0
+        }
+      ],
+      'tax_details_transferred': [
+        {
+          'tax': account.tax(3,
+          ),
+          'base': 47.0,
+          'tax_amount': 0.0,
+          'tax_name': None,
+          'total': 0.0
+        }
+      ],
+      'tax_details_withholding': []
+    },
+    {
+      'line': account.move.line(74,
+      ),
+      'price_unit_wo_discount': 4.0,
+      'total_wo_discount': 40.0,
+      'discount_amount': 0.0,
+      'price_subtotal_unit': 4.0,
+      'tax_details': [
+        {
+          'tax': account.tax(3,
+          ),
+          'base': 40.0,
+          'tax_amount': 0.0,
+          'tax_name': None,
+          'total': 0.0
+        }
+      ],
+      'tax_details_transferred': [
+        {
+          'tax': account.tax(3,
+          ),
+          'base': 40.0,
+          'tax_amount': 0.0,
+          'tax_name': None,
+          'total': 0.0
+        }
+      ],
+      'tax_details_withholding': []
+    },
+    {
+      'line': account.move.line(75,
+      ),
+      'price_unit_wo_discount': 1.2,
+      'total_wo_discount': 120.0,
+      'discount_amount': 0.0,
+      'price_subtotal_unit': 1.2,
+      'tax_details': [
+        {
+          'tax': account.tax(3,
+          ),
+          'base': 120.0,
+          'tax_amount': 0.0,
+          'tax_name': None,
+          'total': 0.0
+        }
+      ],
+      'tax_details_transferred': [
+        {
+          'tax': account.tax(3,
+          ),
+          'base': 120.0,
+          'tax_amount': 0.0,
+          'tax_name': None,
+          'total': 0.0
+        }
+      ],
+      'tax_details_withholding': []
+    }
+  ],
+  'total_amount_untaxed_wo_discount': 433.0,
+  'total_amount_untaxed_discount': 0.0,
+  'tax_details_transferred': [
+    {
+      'tax': account.tax(1,
+      ),
+      'tax_amount': 0.12,
+      'tax_name': None,
+      'total': 27.12
+    },
+    {
+      'tax': account.tax(3,
+      ),
+      'tax_amount': 0.0,
+      'tax_name': None,
+      'total': 0.0
+    }
+  ],
+  'tax_details_withholding': [],
+  'total_tax_details_transferred': 27.12,
+  'total_tax_details_withholding': 0
+}

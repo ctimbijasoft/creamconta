@@ -1,0 +1,123 @@
+<factura id="comprobante" version="1.1.0">
+    <infoTributaria>
+        <ambiente>2</ambiente>
+        <tipoEmision>1</tipoEmision>
+        <razonSocial>EC Company</razonSocial>
+        <nombreComercial>EC CompanyJasoft Soluciones Empresariales Cia. Ltda.</nombreComercial>
+        <ruc>2067636473651</ruc>
+        <claveAcceso>2501202101019036878500120010010000008570190151513</claveAcceso>
+        <codDoc>01</codDoc>
+        <estab>001</estab>
+        <ptoEmi>001</ptoEmi>
+        <secuencial>000000857</secuencial>
+        <dirMatriz>Alfonso Moreno Mora 5-12 y Cesar Davila</dirMatriz>
+    </infoTributaria>
+    <infoFactura>
+        <fechaEmision>25/01/2021</fechaEmision>
+        <dirEstablecimiento>Alfonso Moreno Mora 5-12 y Cesar Davila</dirEstablecimiento>
+        <obligadoContabilidad>SI</obligadoContabilidad>
+        <tipoIdentificacionComprador>04</tipoIdentificacionComprador>
+        <razonSocialComprador>CONSUMIDOR FINAL UNIVERSIDAD POLITECNICA SALESIANA</razonSocialComprador>
+        <identificacionComprador>9999999999999</identificacionComprador>
+        <totalSinImpuestos>1167.4</totalSinImpuestos>
+        <totalDescuento>0.0</totalDescuento>
+        <totalConImpuestos>
+            <totalImpuesto>
+                <codigo>2</codigo>
+                <codigoPorcentaje>0</codigoPorcentaje>
+                <baseImponible>0.0</baseImponible>
+                <valor>0.00</valor>
+            </totalImpuesto>
+            <totalImpuesto>
+                <codigo>2</codigo>
+                <codigoPorcentaje>2</codigoPorcentaje>
+                <baseImponible>11360.0</baseImponible>
+                <valor>1363.2</valor>
+            </totalImpuesto>
+        </totalConImpuestos>
+        <propina>0.0</propina>
+        <importeTotal>12723.2</importeTotal>
+        <moneda>DOLAR</moneda>
+        <pagos>
+            <pago>
+                <formaPago>20</formaPago>
+                <total>12723.2</total>
+                <plazo>0</plazo>
+                <unidadTiempo>dias</unidadTiempo>
+            </pago>
+        </pagos>
+    </infoFactura>
+    <detalles>
+        <detalle>
+            <codigoPrincipal>E-COM10</codigoPrincipal>
+            <codigoAuxiliar>E-COM10</codigoAuxiliar>
+            <descripcion>[E-COM10] Cubo de pedal</descripcion>
+            <cantidad>1.000000</cantidad>
+            <precioUnitario>47.00</precioUnitario>
+            <descuento></descuento>
+            <precioTotalSinImpuesto>47.00</precioTotalSinImpuesto>
+            <detallesAdicionales>
+                <detAdicional nombre="null" valor="null"></detAdicional>
+            </detallesAdicionales>
+            <impuestos>
+                <impuesto>
+                    <codigo>2</codigo>
+                    <codigoPorcentaje>2</codigoPorcentaje>
+                    <tarifa>12</tarifa>
+                    <baseImponible>2000.0</baseImponible>
+                    <valor>240.0</valor>
+                </impuesto>
+            </impuestos>
+        </detalle>
+        <detalle>
+            <codigoPrincipal>E-COM07</codigoPrincipal>
+            <codigoAuxiliar>E-COM07</codigoAuxiliar>
+            <descripcion>[E-COM07] Gabinete grande</descripcion>
+            <cantidad>1.000000</cantidad>
+            <precioUnitario>320.00</precioUnitario>
+            <descuento></descuento>
+            <precioTotalSinImpuesto>320.00</precioTotalSinImpuesto>
+            <detallesAdicionales>
+                <detAdicional nombre="null" valor="null"></detAdicional>
+            </detallesAdicionales>
+            <impuestos>
+                <impuesto>
+                    <codigo>2</codigo>
+                    <codigoPorcentaje>2</codigoPorcentaje>
+                    <tarifa>12</tarifa>
+                    <baseImponible>2000.0</baseImponible>
+                    <valor>240.0</valor>
+                </impuesto>
+            </impuestos>
+        </detalle>
+        <detalle>
+            <codigoPrincipal>DESK0004</codigoPrincipal>
+            <codigoAuxiliar>DESK0004</codigoAuxiliar>
+            <descripcion>[DESK0004] Escritorio personalizable (CONFIG) (Aluminio, Negro)160x80cm, con patas grandes.
+            </descripcion>
+            <cantidad>1.000000</cantidad>
+            <precioUnitario>800.40</precioUnitario>
+            <descuento></descuento>
+            <precioTotalSinImpuesto>800.40</precioTotalSinImpuesto>
+            <detallesAdicionales>
+                <detAdicional nombre="null" valor="null"></detAdicional>
+            </detallesAdicionales>
+            <impuestos>
+                <impuesto>
+                    <codigo>2</codigo>
+                    <codigoPorcentaje>2</codigoPorcentaje>
+                    <tarifa>12</tarifa>
+                    <baseImponible>2000.0</baseImponible>
+                    <valor>240.0</valor>
+                </impuesto>
+            </impuestos>
+        </detalle>
+    </detalles>
+    <infoAdicional>
+        <campoAdicional nombre="Agente de Retencion">No. Resolucion: 1</campoAdicional>
+        <campoAdicional nombre="Contribuyente Regimen Microempresas">.</campoAdicional>
+        <campoAdicional nombre="Direccion">Calle Vieja 12-13 y Elia Liut</campoAdicional>
+        <campoAdicional nombre="Telefono">2862213</campoAdicional>
+        <campoAdicional nombre="Email">xchaca@ups.edu.ec</campoAdicional>
+    </infoAdicional>
+</factura>        '

@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
+<factura id="comprobante" version="1.1.0">
+    <infoTributaria>
+        <ambiente>2</ambiente>
+        <tipoEmision>1</tipoEmision>
+        <razonSocial>Jasoft Soluciones Empresariales Cia. Ltda.</razonSocial>
+        <nombreComercial>Jasoft Soluciones Empresariales Cia. Ltda.</nombreComercial>
+        <ruc>0190368785001</ruc>
+        <claveAcceso>2501202101019036878500120010010000008570190151513</claveAcceso>
+        <codDoc>01</codDoc>
+        <estab>001</estab>
+        <ptoEmi>001</ptoEmi>
+        <secuencial>000000857</secuencial>
+        <dirMatriz>Alfonso Moreno Mora 5-12 y Cesar Davila</dirMatriz>
+    </infoTributaria>
+    <infoFactura>
+        <fechaEmision>25/01/2021</fechaEmision>
+        <dirEstablecimiento>Alfonso Moreno Mora 5-12 y Cesar Davila</dirEstablecimiento>
+        <obligadoContabilidad>SI</obligadoContabilidad>
+        <tipoIdentificacionComprador>04</tipoIdentificacionComprador>
+        <razonSocialComprador>UNIVERSIDAD POLITECNICA SALESIANA</razonSocialComprador>
+        <identificacionComprador>0190151530001</identificacionComprador>
+        <totalSinImpuestos>11360.0</totalSinImpuestos>
+        <totalDescuento>0.0</totalDescuento>
+        <totalConImpuestos>
+            <totalImpuesto>
+                <codigo>2</codigo>
+                <codigoPorcentaje>0</codigoPorcentaje>
+                <baseImponible>0.0</baseImponible>
+                <valor>0.00</valor>
+            </totalImpuesto>
+            <totalImpuesto>
+                <codigo>2</codigo>
+                <codigoPorcentaje>2</codigoPorcentaje>
+                <baseImponible>11360.0</baseImponible>
+                <valor>1363.2</valor>
+            </totalImpuesto>
+        </totalConImpuestos>
+        <propina>0.0</propina>
+        <importeTotal>12723.2</importeTotal>
+        <moneda>DOLAR</moneda>
+        <pagos>
+            <pago>
+                <formaPago>20</formaPago>
+                <total>12723.2</total>
+                <plazo>0</plazo>
+                <unidadTiempo>dias</unidadTiempo>
+            </pago>
+        </pagos>
+    </infoFactura>
+    <detalles>
+        <detalle>
+            <codigoPrincipal>UPS-DLF</codigoPrincipal>
+            <codigoAuxiliar>UPS-DLF</codigoAuxiliar>
+            <descripcion>Desarrollo de Plantilla CMS Liferay</descripcion>
+            <cantidad>1.0</cantidad>
+            <precioUnitario>2000.0</precioUnitario>
+            <descuento>0.0</descuento>
+            <precioTotalSinImpuesto>2000.0</precioTotalSinImpuesto>
+            <detallesAdicionales>
+                <detAdicional nombre="null" valor="null"/>
+            </detallesAdicionales>
+            <impuestos>
+                <impuesto>
+                    <codigo>2</codigo>
+                    <codigoPorcentaje>2</codigoPorcentaje>
+                    <tarifa>12</tarifa>
+                    <baseImponible>2000.0</baseImponible>
+                    <valor>240.0</valor>
+                </impuesto>
+            </impuestos>
+        </detalle>
+        <detalle>
+            <codigoPrincipal>UPS-CLF</codigoPrincipal>
+            <codigoAuxiliar>UPS-CLF</codigoAuxiliar>
+            <descripcion>Configuraci?n/desarrollo y personalizaci?n de componentes y p?ginas</descripcion>
+            <cantidad>1.0</cantidad>
+            <precioUnitario>9360.0</precioUnitario>
+            <descuento>0.0</descuento>
+            <precioTotalSinImpuesto>9360.0</precioTotalSinImpuesto>
+            <detallesAdicionales>
+                <detAdicional nombre="null" valor="null"/>
+            </detallesAdicionales>
+            <impuestos>
+                <impuesto>
+                    <codigo>2</codigo>
+                    <codigoPorcentaje>2</codigoPorcentaje>
+                    <tarifa>12</tarifa>
+                    <baseImponible>9360.0</baseImponible>
+                    <valor>1123.2</valor>
+                </impuesto>
+            </impuestos>
+        </detalle>
+    </detalles>
+    <infoAdicional>
+        <campoAdicional nombre="Agente de Retencion">No. Resolucion: 1</campoAdicional>
+        <campoAdicional nombre="Contribuyente Regimen Microempresas">.</campoAdicional>
+        <campoAdicional nombre="Direccion">Calle Vieja 12-13 y Elia Liut</campoAdicional>
+        <campoAdicional nombre="Telefono">2862213</campoAdicional>
+        <campoAdicional nombre="Email">xchaca@ups.edu.ec</campoAdicional>
+    </infoAdicional>
+    <ds:Signature xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns:etsi="http://uri.etsi.org/01903/v1.3.2#"
+                  Id="Signature796862">
+        <ds:SignedInfo Id="Signature-SignedInfo759194">
+            <ds:CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+            <ds:SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+            <ds:Reference Id="SignedPropertiesID76857" Type="http://uri.etsi.org/01903#SignedProperties"
+                          URI="#Signature796862-SignedProperties285698">
+                <ds:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+                <ds:DigestValue>9fpzYQ4k4NsjPe1g+ou2tMr2alU=</ds:DigestValue>
+            </ds:Reference>
+            <ds:Reference URI="#Certificate1367999">
+                <ds:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+                <ds:DigestValue>GMxd53SMT8P5/Di904mDVl9Wx0A=</ds:DigestValue>
+            </ds:Reference>
+            <ds:Reference Id="Reference-ID-826914" URI="#comprobante">
+                <ds:Transforms>
+                    <ds:Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+                </ds:Transforms>
+                <ds:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+                <ds:DigestValue>Qow91VTywVhoVsKs/O0IzXpwCVw=</ds:DigestValue>
+            </ds:Reference>
+        </ds:SignedInfo>
+        <ds:SignatureValue Id="SignatureValue943897">
+            u12HyLwmOQzeQ7z5uNdg0ezBrOAhEj4YByWZo1U5HgbFmswnYJo1bZdn7NDZmPMpNiY0FGjoqjLrlALtnVvDNMrxexUVaRSIWhLldACCn9RrMFLkaZHHgLswXRCPedLWoqFFae8tOk2+XmpcZiTCHBqDHY9fIVAbMgKKTjXApSIcErM20EtdhISddMOsEfEMGcFvZUJ1aWPBt1DVZwsVEUTzm4y30lEwV7CcNAh19OrMAFF7cj68Kv7DvgxsluT5I0PqCRszzFUlWY2OGs4YMH+Cts0tguAJlr1X3SbxdaYtSaTWlSnDDpYi1XMYT26zqMOmnYZ6/3pq/eEnCqRcNw==
+        </ds:SignatureValue>
+        <ds:KeyInfo Id="Certificate1367999">
+            <ds:X509Data>
+                <ds:X509Certificate>
+                    MIIJ+DCCB+CgAwIBAgIEW2PqkjANBgkqhkiG9w0BAQsFADCBoTELMAkGA1UEBhMCRUMxIjAgBgNVBAoTGUJBTkNPIENFTlRSQUwgREVMIEVDVUFET1IxNzA1BgNVBAsTLkVOVElEQUQgREUgQ0VSVElGSUNBQ0lPTiBERSBJTkZPUk1BQ0lPTi1FQ0lCQ0UxDjAMBgNVBAcTBVFVSVRPMSUwIwYDVQQDExxBQyBCQU5DTyBDRU5UUkFMIERFTCBFQ1VBRE9SMB4XDTIwMDYyMjE3NDcwNVoXDTIyMDYyMjE4MTcwNVowgbgxCzAJBgNVBAYTAkVDMSIwIAYDVQQKExlCQU5DTyBDRU5UUkFMIERFTCBFQ1VBRE9SMTcwNQYDVQQLEy5FTlRJREFEIERFIENFUlRJRklDQUNJT04gREUgSU5GT1JNQUNJT04tRUNJQkNFMQ4wDAYDVQQHEwVRVUlUTzE8MBEGA1UEBRMKMDAwMDQ4MDI3OTAnBgNVBAMTIENSSVNUSUFOIEZFUk5BTkRPIFRJTUJJIFNJU0FMSU1BMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAybLq+UDLcgnE0+FUiX1KhMDaZA+6U8TzTwbtVOt3VRLZJcviD3GJvDWsdPPreyjDGGQwdCAjEhd7FHxNSbOSRZf7FlHK5JKhUI7TX8iqqzteKBZV1L9zRUVKpOQuTPA4APzRcmZ1JwuVNys80+g1kzHZjdzSDuiQMNB/Y4vqH0GDmGhejvQydSKZ4axyIy23RTugs3XMWtybeoY4KvtnBy84GKKTu5JdL9pJjm6aPXfLZzKC1m97as1mmpAezrEV7N3fbPhjOf8RDm84dO9yZs7N1dbtRs7j01EHDkaCzszsGJL12ZzcRVLBPWtzDZcjtsRaCpQnoCFGosrbCzvrsQIDAQABo4IFHTCCBRkwCwYDVR0PBAQDAgeAMGcGA1UdIARgMF4wXAYLKwYBBAGCqDsCAgEwTTBLBggrBgEFBQcCARY/aHR0cDovL3d3dy5lY2kuYmNlLmVjL3BvbGl0aWNhLWNlcnRpZmljYWRvL3BlcnNvbmEtanVyaWRpY2EucGRmMIGRBggrBgEFBQcBAQSBhDCBgTA+BggrBgEFBQcwAYYyaHR0cDovL29jc3AuZWNpLmJjZS5lYy9lamJjYS9wdWJsaWN3ZWIvc3RhdHVzL29jc3AwPwYIKwYBBQUHMAGGM2h0dHA6Ly9vY3NwMS5lY2kuYmNlLmVjL2VqYmNhL3B1YmxpY3dlYi9zdGF0dXMvb2NzcDA4BgorBgEEAYKoOwMKBCoTKEpBU09GVCBTT0xVQ0lPTkVTIEVNUFJFU0FSSUFMRVMgQ0lBIExUREEwHQYKKwYBBAGCqDsDCwQPEw0wMTkwMzY4Nzg1MDAxMBoGCisGAQQBgqg7AwEEDBMKMDEwMzcwOTkxMTAhBgorBgEEAYKoOwMCBBMTEUNSSVNUSUFOIEZFUk5BTkRPMBUGCisGAQQBgqg7AwMEBxMFVElNQkkwGAYKKwYBBAGCqDsDBAQKEwhTSVNBTElNQTAfBgorBgEEAYKoOwMFBBETD0dFUkVOVEUgR0VORVJBTDAiBgorBgEEAYKoOwMHBBQTEkFMRk9OU08gTU9SRU5PIDUxMjAZBgorBgEEAYKoOwMIBAsTCTA3Mjg4MTA1NjAWBgorBgEEAYKoOwMJBAgTBkN1ZW5jYTAXBgorBgEEAYKoOwMMBAkTB0VDVUFET1IwIAYKKwYBBAGCqDsDMwQSExBTT0ZUV0FSRS1BUkNISVZPMBsGA1UdEQQUMBKBEGN0aW1iaUBqYXNvZnQuZWMwggHfBgNVHR8EggHWMIIB0jCCAc6gggHKoIIBxoaB1WxkYXA6Ly9iY2VxbGRhcHN1YnAxLmJjZS5lYy9jbj1DUkw5OTAsY249QUMlMjBCQU5DTyUyMENFTlRSQUwlMjBERUwlMjBFQ1VBRE9SLGw9UVVJVE8sb3U9RU5USURBRCUyMERFJTIwQ0VSVElGSUNBQ0lPTiUyMERFJTIwSU5GT1JNQUNJT04tRUNJQkNFLG89QkFOQ08lMjBDRU5UUkFMJTIwREVMJTIwRUNVQURPUixjPUVDP2NlcnRpZmljYXRlUmV2b2NhdGlvbkxpc3Q/YmFzZYY0aHR0cDovL3d3dy5lY2kuYmNlLmVjL0NSTC9lY2lfYmNlX2VjX2NybGZpbGVjb21iLmNybKSBtTCBsjELMAkGA1UEBhMCRUMxIjAgBgNVBAoTGUJBTkNPIENFTlRSQUwgREVMIEVDVUFET1IxNzA1BgNVBAsTLkVOVElEQUQgREUgQ0VSVElGSUNBQ0lPTiBERSBJTkZPUk1BQ0lPTi1FQ0lCQ0UxDjAMBgNVBAcTBVFVSVRPMSUwIwYDVQQDExxBQyBCQU5DTyBDRU5UUkFMIERFTCBFQ1VBRE9SMQ8wDQYDVQQDEwZDUkw5OTAwKwYDVR0QBCQwIoAPMjAyMDA2MjIxNzQ3MDVagQ8yMDIyMDYyMjE4MTcwNVowHwYDVR0jBBgwFoAUSKLfIx8d+CxReowDzUkypQnBlKswHQYDVR0OBBYEFLLlqI5oC+MiA1bdjbfSdTKaCMHLMAkGA1UdEwQCMAAwGQYJKoZIhvZ9B0EABAwwChsEVjguMQMCBLAwDQYJKoZIhvcNAQELBQADggIBALtgxUkbsLasaGPzqUVcKrH1fJ5OGUfAFV2ix8+vstAxGxU3EjZr7wcjzS3VZ/JAGjFc0nF6e42zmY50VCs7GMlrC7MFDvV0st2FeFEFRib7DY+XhIkXRk/MLV8WpjT6zmcGOGH9JciNUtFqtzHadVToNeEm4KGzJ1UW5K8MRXH0t/6PKyv6oPBNJzt/d99ZXv0RI4le0KrP/B9Cv57BcJ3o9OibsbVaDuuSeRcGYehI+qeYEodoKdB0zxsvqvMLV7beprcjXTzK/5TDIVlG7pW063lnNF7irwtqSuAspqlQ7eLrX4+ZeQNlkYVAQXfgEWNzHnkGfiVsVo0lzGmuJ6OIuo/+tWmAn+KSD56YaPaNPMJIO/SYVLbcSS0dWI3iXQJLbEefnnJIyzh7tRclH17dgSJPXq3KBwPk2HFajUZoHfwrRUOcKNBSIoF44bTL0AVCyvqL3IN5Q2Z9OUqHYxDPRX07AjXrHJ3WgO3asqVQbgemcDm/8TP3GFnMtcpVO5L5O2TDFEPPiJcftc3qy1/2xVR/vImElDzbR9Wl+6JzGOPwo4K9+GLhjFEwxalACb+S2P8f1TWyAMahNhj3FRyeZsGZ/J/OAeVcld9ZDhy9SX6lgOyMVuOJdojFvo4SOo+QnJM0iGOf6dRazvvBJURXkJp/XavW4+OUWnx8//Yj
+                </ds:X509Certificate>
+            </ds:X509Data>
+            <ds:KeyValue>
+                <ds:RSAKeyValue>
+                    <ds:Modulus>
+                        ybLq+UDLcgnE0+FUiX1KhMDaZA+6U8TzTwbtVOt3VRLZJcviD3GJvDWsdPPreyjDGGQwdCAjEhd7FHxNSbOSRZf7FlHK5JKhUI7TX8iqqzteKBZV1L9zRUVKpOQuTPA4APzRcmZ1JwuVNys80+g1kzHZjdzSDuiQMNB/Y4vqH0GDmGhejvQydSKZ4axyIy23RTugs3XMWtybeoY4KvtnBy84GKKTu5JdL9pJjm6aPXfLZzKC1m97as1mmpAezrEV7N3fbPhjOf8RDm84dO9yZs7N1dbtRs7j01EHDkaCzszsGJL12ZzcRVLBPWtzDZcjtsRaCpQnoCFGosrbCzvrsQ==
+                    </ds:Modulus>
+                    <ds:Exponent>AQAB</ds:Exponent>
+                </ds:RSAKeyValue>
+            </ds:KeyValue>
+        </ds:KeyInfo>
+        <ds:Object Id="Signature796862-Object958013">
+            <etsi:QualifyingProperties Target="#Signature796862">
+                <etsi:SignedProperties Id="Signature796862-SignedProperties285698">
+                    <etsi:SignedSignatureProperties>
+                        <etsi:SigningTime>2021-01-29T13:15:49+00:00</etsi:SigningTime>
+                        <etsi:SigningCertificate>
+                            <etsi:Cert>
+                                <etsi:CertDigest>
+                                    <ds:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+                                    <ds:DigestValue>q+bsyg9o0HDSBNlUHB5TIFQW3xc=</ds:DigestValue>
+                                </etsi:CertDigest>
+                                <etsi:IssuerSerial>
+                                    <ds:X509IssuerName>CN=AC BANCO CENTRAL DEL ECUADOR,L=QUITO,OU=ENTIDAD DE
+                                        CERTIFICACION DE INFORMACION-ECIBCE,O=BANCO CENTRAL DEL ECUADOR,C=EC
+                                    </ds:X509IssuerName>
+                                    <ds:X509SerialNumber>1533274770</ds:X509SerialNumber>
+                                </etsi:IssuerSerial>
+                            </etsi:Cert>
+                        </etsi:SigningCertificate>
+                    </etsi:SignedSignatureProperties>
+                    <etsi:SignedDataObjectProperties>
+                        <etsi:DataObjectFormat ObjectReference="#Reference-ID-826914">
+                            <etsi:Description>contenido comprobante</etsi:Description>
+                            <etsi:MimeType>text/xml</etsi:MimeType>
+                        </etsi:DataObjectFormat>
+                    </etsi:SignedDataObjectProperties>
+                </etsi:SignedProperties>
+            </etsi:QualifyingProperties>
+        </ds:Object>
+    </ds:Signature>
+</factura>

@@ -1,0 +1,104 @@
+<notaCredito id="comprobante" version="1.1.0">
+                <infoTributaria>
+                    <ambiente>1</ambiente>
+                    <tipoEmision>1</tipoEmision>
+                    <razonSocial>Jasoft Soluciones Empresariales Ca. Ltda.</razonSocial>
+                    <nombreComercial>Jasoft</nombreComercial>
+                    <ruc>0190368785001</ruc>
+                    <claveAcceso>3103202104019036878500110011000000000069006354412</claveAcceso>
+                    <codDoc>04</codDoc>
+                    <estab>001</estab>
+                    <ptoEmi>100</ptoEmi>
+                    <secuencial>000000006</secuencial>
+                    <dirMatriz>Alfonso Moreno Mora y Cesar Davila Cuenca</dirMatriz>
+                </infoTributaria>
+                <infoNotaCredito>
+                    <fechaEmision>31/03/2021</fechaEmision>
+                    <dirEstablecimiento>Alfonso Cordero</dirEstablecimiento>
+                    <tipoIdentificacionComprador>07</tipoIdentificacionComprador>
+                    <razonSocialComprador>CONSUMIDOR FINAL</razonSocialComprador>
+                    <identificacionComprador>9999999999999</identificacionComprador>
+                    <obligadoContabilidad>SI</obligadoContabilidad>
+                    <codDocModificado>01</codDocModificado>
+                    <numDocModificado>001-002-000000006</numDocModificado>
+                    <fechaEmisionDocSustento>31/03/2021</fechaEmisionDocSustento>
+                    <totalSinImpuestos>13.39</totalSinImpuestos>
+                    <valorModificacion>13.39</valorModificacion>
+                    <moneda>DOLAR</moneda>
+                    <totalConImpuestos>
+                        <totalImpuesto>
+                            <codigo>2</codigo>
+                            <codigoPorcentaje>0</codigoPorcentaje>
+                            <baseImponible>0.0</baseImponible>
+                            <valor>0.0</valor>
+                        </totalImpuesto>
+                        <totalImpuesto>
+                            <codigo>2</codigo>
+                            <codigoPorcentaje>2</codigoPorcentaje>
+                            <baseImponible>13.39</baseImponible>
+                            <valor>1.6</valor>
+                        </totalImpuesto>
+                    </totalConImpuestos>
+                    <motivo>Cambio de factura</motivo>
+                </infoNotaCredito>
+                <detalles>
+                    
+                        
+                        <detalle>
+                            <codigoInterno>FURN_0001</codigoInterno>
+                            <descripcion>[FURN_0001] Organizador de Escritorio</descripcion>
+                            <cantidad>2.00</cantidad>
+                            <precioUnitario>5.10</precioUnitario>
+                            <descuento>0</descuento>
+                            <precioTotalSinImpuesto>10.20</precioTotalSinImpuesto>
+                            <detallesAdicionales>
+                                <detAdicional nombre="null" valor="null"></detAdicional>
+                            </detallesAdicionales>
+                            <impuestos>
+                                
+                                    
+                                        <impuesto>
+                                            <codigo>2</codigo>
+                                            <codigoPorcentaje>2</codigoPorcentaje>
+                                            <tarifa>12.0</tarifa>
+                                            <baseImponible>10.20</baseImponible>
+                                            <valor>1.22</valor>
+                                        </impuesto>
+                                
+                            </impuestos>
+                        </detalle>
+                    
+                        
+                        <detalle>
+                            <codigoInterno>FURN_0006</codigoInterno>
+                            <descripcion>[FURN_0006] Soporte de Monitor</descripcion>
+                            <cantidad>1.00</cantidad>
+                            <precioUnitario>3.19</precioUnitario>
+                            <descuento>0</descuento>
+                            <precioTotalSinImpuesto>3.19</precioTotalSinImpuesto>
+                            <detallesAdicionales>
+                                <detAdicional nombre="null" valor="null"></detAdicional>
+                            </detallesAdicionales>
+                            <impuestos>
+                                
+                                    
+                                        <impuesto>
+                                            <codigo>2</codigo>
+                                            <codigoPorcentaje>2</codigoPorcentaje>
+                                            <tarifa>12.0</tarifa>
+                                            <baseImponible>3.19</baseImponible>
+                                            <valor>0.38</valor>
+                                        </impuesto>
+                                
+                            </impuestos>
+                        </detalle>
+                    
+                </detalles>
+                <infoAdicional>
+                    <campoAdicional nombre="Agente de Retencion">No. Resolucion: 1</campoAdicional>
+                    
+                    <campoAdicional nombre="Direccion">Ecuador</campoAdicional>
+                    <campoAdicional nombre="Telefono">.</campoAdicional>
+                    
+                </infoAdicional>
+            </notaCredito>

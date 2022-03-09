@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="sri_nc_v110v2">
+            <notaCredito id="comprobante" version="1.1.0">
+                <infoTributaria>
+                    <ambiente><t t-esc="environment"/></ambiente>
+                    <tipoEmision>1</tipoEmision>
+                    <razonSocial><t t-esc="format_string(record.company_id.company_registry, 300)"/></razonSocial>
+                    <nombreComercial><t t-esc="format_string(supplier.name, 300)"/></nombreComercial>
+                    <ruc><t t-esc="supplier.vat"/></ruc>
+                    <claveAcceso><t t-esc="access_key"/></claveAcceso>
+                    <codDoc><t t-esc="record.l10n_latam_document_type_id.code.zfill(2)"/></codDoc>
+                    <estab><t t-esc="sri_estab"/></estab>
+                    <ptoEmi><t t-esc="sri_ptoemi"/></ptoEmi>
+                    <secuencial><t t-esc="str(record.sequence_number).zfill(9)"/></secuencial>
+                    <dirMatriz><t t-esc="' '.join([item for item in [
+                                ' y '.join([item for item in [record.company_id.street, record.company_id.street2] if item]),
+                                record.company_id.city] if item])"/></dirMatriz>
+                </infoTributaria>
+                <infoNotaCredito>
+                    <fechaEmision><t t-esc="record.invoice_date.strftime('%d/%m/%Y')"/></fechaEmision>
+                    <dirEstablecimiento><t t-esc="record.printer_point.printer_point_address"/></dirEstablecimiento>
+                    <tipoIdentificacionComprador><t t-esc="'07' if customer.vat == '9999999999999' else str(customer.l10n_latam_identification_type_id.sequence).zfill(2)"/></tipoIdentificacionComprador>
+                    <razonSocialComprador><t t-esc="format_string(customer.commercial_partner_id.name, 254)"/></razonSocialComprador>
+                    <identificacionComprador><t t-esc="customer.vat"/></identificacionComprador>
+                    <obligadoContabilidad><t t-esc="'SI' if record.company_id.l10n_ec_edi_forced_accounting == True else 'NO'"/></obligadoContabilidad>
+                    <codDocModificado><t t-esc="invoice_origin.l10n_latam_document_type_id.code.zfill(2)"/></codDocModificado>
+                    <numDocModificado><t t-esc="invoice_origin.name[invoice_origin.name.find(' ')+1:]"/></numDocModificado>
+                    <fechaEmisionDocSustento><t t-esc="invoice_origin.invoice_date.strftime('%d/%m/%Y')"/></fechaEmisionDocSustento>
+                    <totalSinImpuestos><t t-esc="format_float(total_with_discount, currency_precision)"/></totalSinImpuestos>
+                    <valorModificacion><t t-esc="invoice_origin.amount_untaxed"/></valorModificacion>
+                    <moneda>DOLAR</moneda>
+                    <totalConImpuestos>
+                        <totalImpuesto>
+                            <codigo><t t-esc="tax_amount['base0']['tax_type']"/></codigo>
+                            <codigoPorcentaje><t t-esc="tax_amount['base0']['percent_id']"/></codigoPorcentaje>
+                            <baseImponible><t t-esc="tax_amount['base0']['total_base']"/></baseImponible>
+                            <valor><t t-esc="tax_amount['base0']['total_value']"/></valor>
+                        </totalImpuesto>
+                        <totalImpuesto>
+                            <codigo><t t-esc="tax_amount['base12']['tax_type']"/></codigo>
+                            <codigoPorcentaje><t t-esc="tax_amount['base12']['percent_id']"/></codigoPorcentaje>
+                            <baseImponible><t t-esc="tax_amount['base12']['total_base']"/></baseImponible>
+                            <valor><t t-esc="tax_amount['base12']['total_value']"/></valor>
+                        </totalImpuesto>
+                    </totalConImpuestos>
+                    <motivo><t t-esc="out_refund_reason"/></motivo>
+                </infoNotaCredito>
+                <detalles>
+                    <t t-foreach="invoice_line_values" t-as="line_values">
+                        <t t-set="line" t-value="line_values['line']"/>
+                        <detalle>
+                            <codigoInterno><t t-esc="format_string(line.product_id.default_code)"/></codigoInterno>
+                            <descripcion><t t-esc="format_string(line.name, 1000)"/></descripcion>
+                            <cantidad><t t-esc="format_float(line.quantity, 2)"/></cantidad>
+                            <precioUnitario><t t-esc="format_float(line_values['price_subtotal_unit'], currency_precision)"/></precioUnitario>
+                            <descuento><t t-esc="format_float(line_values['discount_amount'], currency_precision) if line_values['discount_amount'] else 0"/></descuento>
+                            <precioTotalSinImpuesto><t t-esc="format_float(line_values['subtotal_with_discount'], currency_precision)"/></precioTotalSinImpuesto>
+                            <detallesAdicionales>
+                                <detAdicional nombre="null" valor="null"/>
+                            </detallesAdicionales>
+                            <impuestos>
+                                <t t-if="line_values['tax_details']"/>
+                                    <t t-foreach="line_values['tax_details']" t-as="tax">
+                                        <impuesto>
+                                            <codigo><t t-esc="tax['tax_type']"/></codigo>
+                                            <codigoPorcentaje><t t-esc="tax['percent_id']"/></codigoPorcentaje>
+                                            <tarifa><t t-esc="tax['tax_amount']"/></tarifa>
+                                            <baseImponible><t t-esc="format_float(tax['base'], currency_precision)"/></baseImponible>
+                                            <valor><t t-esc="format_float(tax['total'], currency_precision)"/></valor>
+                                        </impuesto>
+                                </t>
+                            </impuestos>
+                        </detalle>
+                    </t>
+                </detalles>
+                <infoAdicional>
+                    <campoAdicional nombre="Agente de Retencion" t-if="res_company.l10n_ec_edi_withhold_agent == 'designated_withhold_agent'">No. Resolucion: <t t-esc="res_company.l10n_ec_edi_withhold_agent_number"/></campoAdicional>
+                    <campoAdicional nombre="Contribuyente Regimen Microempresas" t-if="res_company.l10n_ec_edi_fiscal_regime == 'micro'">.</campoAdicional>
+                    <campoAdicional nombre="Direccion"><t t-esc="' - '.join([item for item in [
+                                ' y '.join([item for item in [customer.street, customer.street2] if item]),
+                                customer.city,
+                                customer.country_id and customer.country_id.name] if item])"/></campoAdicional>
+                    <campoAdicional nombre="Telefono"><t t-esc="' - '.join([item for item in [customer.phone, customer.mobile] if item])"/>.</campoAdicional>
+                    <campoAdicional t-if="customer.email" nombre="Email"><t t-esc="customer.email"/></campoAdicional>
+                </infoAdicional>
+            </notaCredito>
+        </template>
+    </data>
+</odoo>

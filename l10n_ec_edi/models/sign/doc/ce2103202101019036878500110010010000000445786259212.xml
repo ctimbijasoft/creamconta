@@ -1,0 +1,116 @@
+<factura id="comprobante" version="1.1.0">
+                <infoTributaria>
+                    <ambiente>1</ambiente>
+                    <tipoEmision>1</tipoEmision>
+                    <razonSocial>Jasoft Matriz</razonSocial>
+                    <nombreComercial>Jasoft</nombreComercial>
+                    <ruc>0190368785001</ruc>
+                    <claveAcceso>2103202101019036878500110010010000000445786259212</claveAcceso>
+                    <codDoc>01</codDoc>
+                    <estab>001</estab>
+                    <ptoEmi>001</ptoEmi>
+                    <secuencial>000000045</secuencial>
+                    <dirMatriz>Av. 10 de Agosto</dirMatriz>
+                </infoTributaria>
+                <infoFactura>
+                    <fechaEmision>21/03/2021</fechaEmision>
+                    <dirEstablecimiento>Alfonso Cordero</dirEstablecimiento>
+                    <obligadoContabilidad>NO</obligadoContabilidad>
+                    <tipoIdentificacionComprador>07</tipoIdentificacionComprador>
+                    <razonSocialComprador>CONSUMIDOR FINAL</razonSocialComprador>
+                    <identificacionComprador>9999999999999</identificacionComprador>
+                    <totalSinImpuestos>6.30</totalSinImpuestos>
+                    <totalDescuento>6.24</totalDescuento>
+                    <totalConImpuestos>
+                        <totalImpuesto>
+                            <codigo>2</codigo>
+                            <codigoPorcentaje>0</codigoPorcentaje>
+                            <baseImponible>0.0</baseImponible>
+                            <valor>0.0</valor>
+                        </totalImpuesto>
+                        <totalImpuesto>
+                            <codigo>2</codigo>
+                            <codigoPorcentaje>2</codigoPorcentaje>
+                            <baseImponible>0.06</baseImponible>
+                            <valor>0.01</valor>
+                        </totalImpuesto>
+                    </totalConImpuestos>
+                    <propina>0.0</propina>
+                    <importeTotal>0.07 </importeTotal>
+                    <moneda>DOLAR</moneda>
+                    <pagos>
+                        <pago>
+                            <formaPago>16</formaPago>
+                            <total>0.07</total>
+                            <plazo>0</plazo>
+                            <unidadTiempo>dias</unidadTiempo>
+                        </pago>
+                    </pagos>
+                </infoFactura>
+                <detalles>
+                    
+                        
+                        <detalle>
+                            <codigoPrincipal>CONS_0001</codigoPrincipal>
+                            <codigoAuxiliar>CONS_0001</codigoAuxiliar>
+                            <descripcion>[CONS_0001] Pluma de Pizarra</descripcion>
+                            <cantidad>1.00</cantidad>
+                            <precioUnitario>1.20</precioUnitario>
+                            <descuento>1.19</descuento>
+                            <precioTotalSinImpuesto>1.20</precioTotalSinImpuesto>
+                            <detallesAdicionales>
+                                <detAdicional nombre="null" valor="null"></detAdicional>
+                            </detallesAdicionales>
+                            <impuestos>
+                                
+                                    
+                                        <impuesto>
+                                            <codigo>2</codigo>
+                                            <codigoPorcentaje>2</codigoPorcentaje>
+                                            <tarifa>12.0</tarifa>
+                                            <baseImponible>0.01</baseImponible>
+                                            <valor>0.00</valor>
+                                        </impuesto>
+                                    
+                            </impuestos>
+                        </detalle>
+                    
+                        
+                        <detalle>
+                            <codigoPrincipal>FURN_0001</codigoPrincipal>
+                            <codigoAuxiliar>FURN_0001</codigoAuxiliar>
+                            <descripcion>[FURN_0001] Organizador de Escritorio</descripcion>
+                            <cantidad>1.00</cantidad>
+                            <precioUnitario>5.10</precioUnitario>
+                            <descuento>5.05</descuento>
+                            <precioTotalSinImpuesto>5.10</precioTotalSinImpuesto>
+                            <detallesAdicionales>
+                                <detAdicional nombre="null" valor="null"></detAdicional>
+                            </detallesAdicionales>
+                            <impuestos>
+                                
+                                    
+                                        <impuesto>
+                                            <codigo>2</codigo>
+                                            <codigoPorcentaje>2</codigoPorcentaje>
+                                            <tarifa>12.0</tarifa>
+                                            <baseImponible>0.05</baseImponible>
+                                            <valor>0.01</valor>
+                                        </impuesto>
+                                    
+                            </impuestos>
+                        </detalle>
+                    
+                </detalles>
+                <infoAdicional>
+                    
+                    
+                    <campoAdicional nombre="Direccion">
+                        Ecuador
+                    </campoAdicional>
+                    <campoAdicional nombre="Telefono">
+                        
+                    </campoAdicional>
+                    
+                </infoAdicional>
+            </factura>

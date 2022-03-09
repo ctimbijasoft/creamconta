@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+Main-Class: org.eclipse.jdt.internal.jarinjarloader.JarRsrcLoader
+Rsrc-Class-Path: ./ bcmail-jdk14-1.38.jar bcprov-jdk14-1.38.jar commons-
+ logging-1.2.jar mityclibxades-1.1.7.jar xmlsec-1.4.2-ADSI-1.1.jar
+Rsrc-Main-Class: ec.jasoft.firmadigital.Main
+Class-Path: .
+

@@ -1,0 +1,129 @@
+<notaCredito id="comprobante" version="1.1.0">
+                <infoTributaria>
+                    <ambiente>1</ambiente>
+                    <tipoEmision>1</tipoEmision>
+                    <razonSocial>Jasoft Soluciones Empresariales Ca. Ltda.</razonSocial>
+                    <nombreComercial>Jasoft</nombreComercial>
+                    <ruc>0190368785001</ruc>
+                    <claveAcceso>3103202104019036878500110011000000000071545965918</claveAcceso>
+                    <codDoc>04</codDoc>
+                    <estab>001</estab>
+                    <ptoEmi>100</ptoEmi>
+                    <secuencial>000000007</secuencial>
+                    <dirMatriz>Alfonso Moreno Mora y Cesar Davila Cuenca</dirMatriz>
+                </infoTributaria>
+                <infoNotaCredito>
+                    <fechaEmision>31/03/2021</fechaEmision>
+                    <dirEstablecimiento>Alfonso Cordero</dirEstablecimiento>
+                    <tipoIdentificacionComprador>05</tipoIdentificacionComprador>
+                    <razonSocialComprador>Cristian Timbi</razonSocialComprador>
+                    <identificacionComprador>0103709911</identificacionComprador>
+                    <obligadoContabilidad>SI</obligadoContabilidad>
+                    <codDocModificado>01</codDocModificado>
+                    <numDocModificado>001-002-000000007</numDocModificado>
+                    <fechaEmisionDocSustento>31/03/2021</fechaEmisionDocSustento>
+                    <totalSinImpuestos>8.00</totalSinImpuestos>
+                    <valorModificacion>8.0</valorModificacion>
+                    <moneda>DOLAR</moneda>
+                    <totalConImpuestos>
+                        <totalImpuesto>
+                            <codigo>2</codigo>
+                            <codigoPorcentaje>0</codigoPorcentaje>
+                            <baseImponible>0.0</baseImponible>
+                            <valor>0.0</valor>
+                        </totalImpuesto>
+                        <totalImpuesto>
+                            <codigo>2</codigo>
+                            <codigoPorcentaje>2</codigoPorcentaje>
+                            <baseImponible>8.0</baseImponible>
+                            <valor>0.96</valor>
+                        </totalImpuesto>
+                    </totalConImpuestos>
+                    <motivo>null</motivo>
+                </infoNotaCredito>
+                <detalles>
+                    
+                        
+                        <detalle>
+                            <codigoInterno>FURN_0006</codigoInterno>
+                            <descripcion>[FURN_0006] Soporte de Monitor</descripcion>
+                            <cantidad>1.00</cantidad>
+                            <precioUnitario>3.19</precioUnitario>
+                            <descuento>0</descuento>
+                            <precioTotalSinImpuesto>3.19</precioTotalSinImpuesto>
+                            <detallesAdicionales>
+                                <detAdicional nombre="null" valor="null"></detAdicional>
+                            </detallesAdicionales>
+                            <impuestos>
+                                
+                                    
+                                        <impuesto>
+                                            <codigo>2</codigo>
+                                            <codigoPorcentaje>2</codigoPorcentaje>
+                                            <tarifa>12.0</tarifa>
+                                            <baseImponible>3.19</baseImponible>
+                                            <valor>0.38</valor>
+                                        </impuesto>
+                                
+                            </impuestos>
+                        </detalle>
+                    
+                        
+                        <detalle>
+                            <codigoInterno>FURN_0008</codigoInterno>
+                            <descripcion>[FURN_0008] Estante Pequeo</descripcion>
+                            <cantidad>1.00</cantidad>
+                            <precioUnitario>2.83</precioUnitario>
+                            <descuento>0</descuento>
+                            <precioTotalSinImpuesto>2.83</precioTotalSinImpuesto>
+                            <detallesAdicionales>
+                                <detAdicional nombre="null" valor="null"></detAdicional>
+                            </detallesAdicionales>
+                            <impuestos>
+                                
+                                    
+                                        <impuesto>
+                                            <codigo>2</codigo>
+                                            <codigoPorcentaje>2</codigoPorcentaje>
+                                            <tarifa>12.0</tarifa>
+                                            <baseImponible>2.83</baseImponible>
+                                            <valor>0.34</valor>
+                                        </impuesto>
+                                
+                            </impuestos>
+                        </detalle>
+                    
+                        
+                        <detalle>
+                            <codigoInterno>FURN_0009</codigoInterno>
+                            <descripcion>[FURN_0009] Estantera de Pared</descripcion>
+                            <cantidad>1.00</cantidad>
+                            <precioUnitario>1.98</precioUnitario>
+                            <descuento>0</descuento>
+                            <precioTotalSinImpuesto>1.98</precioTotalSinImpuesto>
+                            <detallesAdicionales>
+                                <detAdicional nombre="null" valor="null"></detAdicional>
+                            </detallesAdicionales>
+                            <impuestos>
+                                
+                                    
+                                        <impuesto>
+                                            <codigo>2</codigo>
+                                            <codigoPorcentaje>2</codigoPorcentaje>
+                                            <tarifa>12.0</tarifa>
+                                            <baseImponible>1.98</baseImponible>
+                                            <valor>0.24</valor>
+                                        </impuesto>
+                                
+                            </impuestos>
+                        </detalle>
+                    
+                </detalles>
+                <infoAdicional>
+                    <campoAdicional nombre="Agente de Retencion">No. Resolucion: 1</campoAdicional>
+                    
+                    <campoAdicional nombre="Direccion">Monay - Ecuador</campoAdicional>
+                    <campoAdicional nombre="Telefono">0984864034</campoAdicional>
+                    <campoAdicional nombre="Email">ctimbi@gmail.com</campoAdicional>
+                </infoAdicional>
+            </notaCredito>

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<factura id="comprobante" version="1.1.0">
+  <infoTributaria>
+    <ambiente>2</ambiente>
+    <tipoEmision>1</tipoEmision>
+    <razonSocial>Jasoft Soluciones Empresariales Cia. Ltda.</razonSocial>
+    <nombreComercial>Jasoft Soluciones Empresariales Cia. Ltda.</nombreComercial>
+    <ruc>0190368785001</ruc>
+    <claveAcceso>2501202101019036878500120010010000008570190151513</claveAcceso>
+    <codDoc>01</codDoc>
+    <estab>001</estab>
+    <ptoEmi>001</ptoEmi>
+    <secuencial>000000857</secuencial>
+    <dirMatriz>Alfonso Moreno Mora 5-12 y Cesar Davila</dirMatriz>
+  </infoTributaria>
+  <infoFactura>
+    <fechaEmision>25/01/2021</fechaEmision>
+    <dirEstablecimiento>Alfonso Moreno Mora 5-12 y Cesar Davila</dirEstablecimiento>
+    <obligadoContabilidad>SI</obligadoContabilidad>
+    <tipoIdentificacionComprador>04</tipoIdentificacionComprador>
+    <razonSocialComprador>UNIVERSIDAD POLITECNICA SALESIANA</razonSocialComprador>
+    <identificacionComprador>0190151530001</identificacionComprador>
+    <totalSinImpuestos>11360.0</totalSinImpuestos>
+    <totalDescuento>0.0</totalDescuento>
+    <totalConImpuestos>
+      <totalImpuesto>
+        <codigo>2</codigo>
+        <codigoPorcentaje>0</codigoPorcentaje>
+        <baseImponible>0.0</baseImponible>
+        <valor>0.00</valor>
+      </totalImpuesto>
+      <totalImpuesto>
+        <codigo>2</codigo>
+        <codigoPorcentaje>2</codigoPorcentaje>
+        <baseImponible>11360.0</baseImponible>
+        <valor>1363.2</valor>
+      </totalImpuesto>
+    </totalConImpuestos>
+    <propina>0.0</propina>
+    <importeTotal>12723.2</importeTotal>
+    <moneda>DOLAR</moneda>
+    <pagos>
+      <pago>
+        <formaPago>20</formaPago>
+        <total>12723.2</total>
+        <plazo>0</plazo>
+        <unidadTiempo>dias</unidadTiempo>
+      </pago>
+    </pagos>
+  </infoFactura>
+  <detalles>
+    <detalle>
+      <codigoPrincipal>UPS-DLF</codigoPrincipal>
+      <codigoAuxiliar>UPS-DLF</codigoAuxiliar>
+      <descripcion>Desarrollo de Plantilla CMS Liferay</descripcion>
+      <cantidad>1.0</cantidad>
+      <precioUnitario>2000.0</precioUnitario>
+      <descuento>0.0</descuento>
+      <precioTotalSinImpuesto>2000.0</precioTotalSinImpuesto>
+      <detallesAdicionales>
+        <detAdicional nombre="null" valor="null"/>
+      </detallesAdicionales>
+      <impuestos>
+        <impuesto>
+          <codigo>2</codigo>
+          <codigoPorcentaje>2</codigoPorcentaje>
+          <tarifa>12</tarifa>
+          <baseImponible>2000.0</baseImponible>
+          <valor>240.0</valor>
+        </impuesto>
+      </impuestos>
+    </detalle>
+    <detalle>
+      <codigoPrincipal>UPS-CLF</codigoPrincipal>
+      <codigoAuxiliar>UPS-CLF</codigoAuxiliar>
+      <descripcion>Configuración/desarrollo y personalización de componentes y páginas</descripcion>
+      <cantidad>1.0</cantidad>
+      <precioUnitario>9360.0</precioUnitario>
+      <descuento>0.0</descuento>
+      <precioTotalSinImpuesto>9360.0</precioTotalSinImpuesto>
+      <detallesAdicionales>
+        <detAdicional nombre="null" valor="null"/>
+      </detallesAdicionales>
+      <impuestos>
+        <impuesto>
+          <codigo>2</codigo>
+          <codigoPorcentaje>2</codigoPorcentaje>
+          <tarifa>12</tarifa>
+          <baseImponible>9360.0</baseImponible>
+          <valor>1123.2</valor>
+        </impuesto>
+      </impuestos>
+    </detalle>
+  </detalles>
+  <infoAdicional>
+    <campoAdicional nombre="Agente de Retencion">No. Resolucion: 1</campoAdicional>
+    <campoAdicional nombre="Contribuyente Regimen Microempresas">.</campoAdicional>
+    <campoAdicional nombre="Direccion">Calle Vieja 12-13 y Elia Liut</campoAdicional>
+    <campoAdicional nombre="Telefono">2862213</campoAdicional>
+    <campoAdicional nombre="Email">xchaca@ups.edu.ec</campoAdicional>
+  </infoAdicional>
+</factura>

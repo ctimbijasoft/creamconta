@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="res_config_settings_view_form" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.inherit.l10n_ec_edi</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="account.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@id='invoicing_settings']" position="after">
+                <h2 attrs="{'invisible': [('country_code', '!=', 'EC')]}">Electronic invoicing (EC)</h2>
+                <div class="row mt16 o_settings_container" id="l10n_ec_edi_settings" attrs="{'invisible': [('country_code', '!=', 'EC')]}">
+                    <div class="col-12 col-lg-12 o_setting_box" title="Fields required to configure the MX SRI.">
+                        <div class="o_setting_left_pane"/>
+                        <div class="o_setting_right_pane">
+                            <!--<span class="o_form_label">Fiscal Regime</span>
+                            <div class="text-muted">
+                                Configure your SRI fiscal regime.
+                            </div>-->
+                            <div class="row mt16">
+                                <label for="l10n_ec_edi_fiscal_regime" class="col-lg-3 o_light_label"/>
+                                <field name="l10n_ec_edi_fiscal_regime"/>
+                            </div>
+                            <div class="row mt16">
+                                <label for="l10n_ec_edi_withhold_agent" class="col-lg-3 o_light_label"/>
+                                <field name="l10n_ec_edi_withhold_agent"/>
+                            </div>
+                            <div class="row mt16">
+                                <label for="l10n_ec_edi_withhold_agent_number" class="col-lg-3 o_light_label"/>
+                                <field name="l10n_ec_edi_withhold_agent_number"/>
+                            </div>
+                            <div class="row mt16">
+                                <label string="Ambiente SRI" for="l10n_ec_edi_pac" class="col-lg-3 o_light_label"/>
+                                <field name="l10n_ec_edi_pac"/>
+                            </div>
+                            <div class="row mt16">
+                                <label string="Printer Point N/C Clients" for="l10n_ec_edi_nc_printer_point" class="col-lg-3 o_light_label"
+                                       widget="selection"/>
+                                <field name="l10n_ec_edi_nc_printer_point"/>
+                            </div>
+                            <div class="row mt16">
+                                <label for="l10n_ec_edi_mail_template_id" string="Email Template" class="col-lg-3 o_light_label"
+                                        widget="selection"/>
+                                <field name="l10n_ec_edi_mail_template_id"/>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-lg-12 o_setting_box" title="The parameters to configure the MX certificate.">
+                        <div class="o_setting_left_pane"/>
+                        <div class="o_setting_right_pane">
+                            <div class="row">
+                                <div class="col-3">
+                                    <span class="o_form_label col-lg-3">EC Certificates</span>
+                                </div>
+                                <div class="col-9">
+                                    <field name="l10n_ec_edi_certificate_ids" style="width: 100%;"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </xpath>
+        </field>
+    </record>
+</odoo>

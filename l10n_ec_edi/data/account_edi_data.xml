@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="edi_sri_ec" model="account.edi.format">
+            <field name="name">SRI (v2.20)</field>
+            <field name="code">sri_ec</field>
+        </record>
+    </data>
+</odoo>

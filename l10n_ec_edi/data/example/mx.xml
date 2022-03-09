@@ -1,0 +1,41 @@
+<sri:Comprobante xmlns:sri="http://www.sat.gob.mx/cfd/3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                  xmlns:cce11="http://www.sat.gob.mx/ComercioExterior11"
+                  xsi:schemaLocation="http://www.sat.gob.mx/cfd/3 http://www.sat.gob.mx/sitio_internet/cfd/3/cfdv33.xsd http://www.sat.gob.mx/ComercioExterior11 http://www.sat.gob.mx/sitio_internet/cfd/ComercioExterior11/ComercioExterior11.xsd"
+                  Version="2_20" Sello="" Fecha="" Folio="3" Serie="Fact." FormaPago="" NoCertificado="b3a1"
+                  Certificado="none" SubTotal="1167.40" Moneda="USD" Total="1307.49" TipoDeComprobante="I" MetodoPago=""
+                  LugarExpedicion="170112">
+    <sri:Emisor Rfc="2067636473651" Nombre="EC Company" RegimenFiscal="M"></sri:Emisor>
+    <sri:Receptor Rfc="9999999999999" Nombre="CONSUMIDOR FINAL" UsoSRI="D08"></sri:Receptor>
+    <sri:Conceptos>
+        <sri:Concepto NoIdentificacion="E-COM10" Cantidad="1.000000" Unidad="Unidades"
+                       Descripcion="[E-COM10] Cubo de pedal" ValorUnitario="47.00" Importe="47.00">
+            <sri:Impuestos>
+                <sri:Traslados>
+                    <sri:Traslado Base="47.00" TasaOCuota="0.120000" Importe="5.64"></sri:Traslado>
+                </sri:Traslados>
+            </sri:Impuestos>
+        </sri:Concepto>
+        <sri:Concepto NoIdentificacion="E-COM07" Cantidad="1.000000" Unidad="Unidades"
+                       Descripcion="[E-COM07] Gabinete grande" ValorUnitario="320.00" Importe="320.00">
+            <sri:Impuestos>
+                <sri:Traslados>
+                    <sri:Traslado Base="320.00" TasaOCuota="0.120000" Importe="38.40"></sri:Traslado>
+                </sri:Traslados>
+            </sri:Impuestos>
+        </sri:Concepto>
+        <sri:Concepto NoIdentificacion="DESK0004" Cantidad="1.000000" Unidad="Unidades"
+                       Descripcion="[DESK0004] Escritorio personalizable (CONFIG) (Aluminio, Negro)\n160x80cm, con patas grandes."
+                       ValorUnitario="800.40" Importe="800.40">
+            <sri:Impuestos>
+                <sri:Traslados>
+                    <sri:Traslado Base="800.40" TasaOCuota="0.120000" Importe="96.05"></sri:Traslado>
+                </sri:Traslados>
+            </sri:Impuestos>
+        </sri:Concepto>
+    </sri:Conceptos>
+    <sri:Impuestos TotalImpuestosTrasladados="140.09">
+        <sri:Traslados>
+            <sri:Traslado Importe="140.09" TasaOCuota="0.120000"></sri:Traslado>
+        </sri:Traslados>
+    </sri:Impuestos>
+</sri:Comprobante>

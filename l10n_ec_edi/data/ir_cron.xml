@@ -1,0 +1,41 @@
+<?xml version="1.0" ?>
+<odoo>
+    <data>
+
+        <record id="ir_cron_authorize_invoice" model="ir.cron">
+            <field name="name">Automatic sending for autorization by SRI (for invoices)</field>
+            <field name="model_id" ref="account.model_account_move"/>
+            <field name="state">code</field>
+            <field name="code">
+                env['account.move']._l10n_ec_edi_cron_update_sat_status()
+            </field>
+            <field name="user_id" ref="base.user_admin"/>
+            <field name="interval_number">2</field>
+            <field name="interval_type">minutes</field>
+            <field name="numbercall">-1</field>
+        </record>
+
+        <record id="ir_cron_edi_network" model="ir.cron">
+            <field name="name">Automatic sending to SRI (for invoices)</field>
+             <field name="model_id" ref="model_account_edi_document"/>
+            <field name="state">code</field>
+            <field name="code">model.search([('state', 'in', ('to_send', 'to_cancel'))])._process_documents_web_services(job_count=100)</field>
+            <field name="interval_number">5</field>
+            <field name="interval_type">minutes</field>
+            <field name="numbercall">-1</field>
+        </record>
+
+        <!--<record id="ir_cron_edi_network" model="ir.cron">
+            <field name="name">Automatic sending to SRI (for invoices)</field>
+             <field name="model_id" ref="account_edi.model_account_edi_format"/>
+            <field name="state">code</field>
+            <field name="code">
+                env['account.edi.format']._l10n_ec_edi_cron_send_to_sri()
+            </field>
+            <field name="interval_number">2</field>
+            <field name="interval_type">minutes</field>
+            <field name="numbercall">-1</field>
+        </record>-->
+
+     </data>
+</odoo>

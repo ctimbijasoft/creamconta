@@ -1,0 +1,92 @@
+<factura id="comprobante" version="1.1.0">
+                <infoTributaria>
+                    <ambiente>1</ambiente>
+                    <tipoEmision>1</tipoEmision>
+                    <razonSocial>Jasoft Soluciones Empresariales Ca. Ltda.</razonSocial>
+                    <nombreComercial>Jasoft</nombreComercial>
+                    <ruc>0190368785001</ruc>
+                    <claveAcceso>1003202101019036878500110011000000000754260443917</claveAcceso>
+                    <codDoc>01</codDoc>
+                    <estab>001</estab>
+                    <ptoEmi>100</ptoEmi>
+                    <secuencial>000000075</secuencial>
+                    <dirMatriz>Alfonso Moreno Mora y Cesar Davila Cuenca</dirMatriz>
+                </infoTributaria>
+                <infoFactura>
+                    <fechaEmision>10/03/2021</fechaEmision>
+                    <dirEstablecimiento>Alfonso Cordero</dirEstablecimiento>
+                    <obligadoContabilidad>SI</obligadoContabilidad>
+                    <tipoIdentificacionComprador>05</tipoIdentificacionComprador>
+                    <razonSocialComprador>Cristian Timbi</razonSocialComprador>
+                    <identificacionComprador>0103709911</identificacionComprador>
+                    <totalSinImpuestos>2.83</totalSinImpuestos>
+                    <totalDescuento>0.00</totalDescuento>
+                    <totalConImpuestos>
+                        <totalImpuesto>
+                            <codigo>2</codigo>
+                            <codigoPorcentaje>0</codigoPorcentaje>
+                            <baseImponible>0.0</baseImponible>
+                            <valor>0.0</valor>
+                        </totalImpuesto>
+                        <totalImpuesto>
+                            <codigo>2</codigo>
+                            <codigoPorcentaje>2</codigoPorcentaje>
+                            <baseImponible>2.83</baseImponible>
+                            <valor>0.34</valor>
+                        </totalImpuesto>
+                    </totalConImpuestos>
+                    <propina>0.0</propina>
+                    <importeTotal>3.17 </importeTotal>
+                    <moneda>DOLAR</moneda>
+                    <pagos>
+                        <pago>
+                            <formaPago>15</formaPago>
+                            <total>3.17</total>
+                            <plazo>0</plazo>
+                            <unidadTiempo>dias</unidadTiempo>
+                        </pago>
+                    </pagos>
+                </infoFactura>
+                <detalles>
+                    
+                        
+                        <detalle>
+                            <codigoPrincipal>FURN_0008</codigoPrincipal>
+                            <codigoAuxiliar>FURN_0008</codigoAuxiliar>
+                            <descripcion>[FURN_0008] Estante Pequeo</descripcion>
+                            <cantidad>1.00</cantidad>
+                            <precioUnitario>2.83</precioUnitario>
+                            <descuento>0</descuento>
+                            <precioTotalSinImpuesto>2.83</precioTotalSinImpuesto>
+                            <detallesAdicionales>
+                                <detAdicional nombre="null" valor="null"></detAdicional>
+                            </detallesAdicionales>
+                            <impuestos>
+                                
+                                    
+                                        <impuesto>
+                                            <codigo>2</codigo>
+                                            <codigoPorcentaje>2</codigoPorcentaje>
+                                            <tarifa>12.0</tarifa>
+                                            <baseImponible>2.83</baseImponible>
+                                            <valor>0.34</valor>
+                                        </impuesto>
+                                    
+                            </impuestos>
+                        </detalle>
+                    
+                </detalles>
+                <infoAdicional>
+                    <campoAdicional nombre="Agente de Retencion">
+                        No. Resolucion: 1
+                    </campoAdicional>
+                    
+                    <campoAdicional nombre="Direccion">
+                        Monay - Ecuador
+                    </campoAdicional>
+                    <campoAdicional nombre="Telefono">
+                        0984864034
+                    </campoAdicional>
+                    <campoAdicional nombre="Email">ctimbi@gmail.com</campoAdicional>
+                </infoAdicional>
+            </factura>

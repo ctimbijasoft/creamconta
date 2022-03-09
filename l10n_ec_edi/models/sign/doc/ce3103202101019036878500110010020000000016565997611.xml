@@ -1,0 +1,84 @@
+<factura id="comprobante" version="1.1.0">
+                <infoTributaria>
+                    <ambiente>1</ambiente>
+                    <tipoEmision>1</tipoEmision>
+                    <razonSocial>Jasoft Soluciones Empresariales Ca. Ltda.</razonSocial>
+                    <nombreComercial>Jasoft</nombreComercial>
+                    <ruc>0190368785001</ruc>
+                    <claveAcceso>3103202101019036878500110010020000000016565997611</claveAcceso>
+                    <codDoc>01</codDoc>
+                    <estab>001</estab>
+                    <ptoEmi>002</ptoEmi>
+                    <secuencial>000000001</secuencial>
+                    <dirMatriz>Alfonso Moreno Mora y Cesar Davila Cuenca</dirMatriz>
+                </infoTributaria>
+                <infoFactura>
+                    <fechaEmision>31/03/2021</fechaEmision>
+                    <dirEstablecimiento>Av. 10 de Agosto y Agustin Laldivar</dirEstablecimiento>
+                    <obligadoContabilidad>SI</obligadoContabilidad>
+                    <tipoIdentificacionComprador>07</tipoIdentificacionComprador>
+                    <razonSocialComprador>CONSUMIDOR FINAL</razonSocialComprador>
+                    <identificacionComprador>9999999999999</identificacionComprador>
+                    <totalSinImpuestos>1.20</totalSinImpuestos>
+                    <totalDescuento>0.00</totalDescuento>
+                    <totalConImpuestos>
+                        <totalImpuesto>
+                            <codigo>2</codigo>
+                            <codigoPorcentaje>0</codigoPorcentaje>
+                            <baseImponible>0.0</baseImponible>
+                            <valor>0.0</valor>
+                        </totalImpuesto>
+                        <totalImpuesto>
+                            <codigo>2</codigo>
+                            <codigoPorcentaje>2</codigoPorcentaje>
+                            <baseImponible>0.0</baseImponible>
+                            <valor>0.0</valor>
+                        </totalImpuesto>
+                    </totalConImpuestos>
+                    <propina>0.0</propina>
+                    <importeTotal>1.2 </importeTotal>
+                    <moneda>DOLAR</moneda>
+                    <pagos>
+                        <pago>
+                            <formaPago>15</formaPago>
+                            <total>1.2</total>
+                            <plazo>0</plazo>
+                            <unidadTiempo>dias</unidadTiempo>
+                        </pago>
+                    </pagos>
+                </infoFactura>
+                <detalles>
+                    
+                        
+                        <detalle>
+                            <codigoPrincipal>CONS_0001</codigoPrincipal>
+                            <codigoAuxiliar>CONS_0001</codigoAuxiliar>
+                            <descripcion>[CONS_0001] Pluma de Pizarra</descripcion>
+                            <cantidad>1.00</cantidad>
+                            <precioUnitario>1.20</precioUnitario>
+                            <descuento>0</descuento>
+                            <precioTotalSinImpuesto>1.20</precioTotalSinImpuesto>
+                            <detallesAdicionales>
+                                <detAdicional nombre="null" valor="null"></detAdicional>
+                            </detallesAdicionales>
+                            <impuestos>
+                                
+                                    
+                            </impuestos>
+                        </detalle>
+                    
+                </detalles>
+                <infoAdicional>
+                    <campoAdicional nombre="Agente de Retencion">
+                        No. Resolucion: 1
+                    </campoAdicional>
+                    
+                    <campoAdicional nombre="Direccion">
+                        Ecuador
+                    </campoAdicional>
+                    <campoAdicional nombre="Telefono">
+                        
+                    </campoAdicional>
+                    
+                </infoAdicional>
+            </factura>
