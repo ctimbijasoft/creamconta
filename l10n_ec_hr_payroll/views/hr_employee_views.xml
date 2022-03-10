@@ -1,0 +1,18 @@
+<odoo>
+  <data>
+    <record id="view_employee_form_pos_access" model="ir.ui.view">
+        <field name="name">view_employee_form_ben_sociales</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//group[@name='identification_group']" position="after">
+                <group string="Beneficios Sociales" name="ben_sociales">
+                    <field name="acumula_fondos_reserva"/>
+                    <field name="acumula_xiii_salario"/>
+                    <field name="acumula_xiv_salario"/>
+                </group>
+            </xpath>
+        </field>
+    </record>
+  </data>
+</odoo>

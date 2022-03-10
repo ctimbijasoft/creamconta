@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="HORASEXT" model="hr.salary.rule.category">
+        <field name="name">Horas Extras</field>
+        <field name="code">HORASEXT</field>
+        <field name="parent_id" eval="False"/>
+        <field name="is_deductible" eval="False"/>
+    </record>
+    <record id="BENSOC" model="hr.salary.rule.category">
+        <field name="name">Beneficios Sociales</field>
+        <field name="code">BENSOC</field>
+        <field name="parent_id" eval="False"/>
+        <field name="is_deductible" eval="False"/>
+    </record>
+
+    <function model="hr.salary.rule.category" name="write">
+        <value model="hr.salary.rule.category" search="[
+            ('code', '=', 'DED')]"/>
+        <value eval="{
+            'is_deductible': 'True',
+            }"/>
+    </function>
+
+</odoo>

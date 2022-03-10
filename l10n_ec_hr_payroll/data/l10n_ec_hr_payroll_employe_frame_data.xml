@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- HR SALARY RULES-->
+
+    <record id="rule_employee_hour_noc" model="hr.salary.rule">
+        <field name="name">Horas Nocturnas</field>
+        <field name="code">HONOC</field>
+        <field name="sequence">5</field>
+        <field name="category_id" ref="HORASEXT"/>
+        <field name="appears_on_payslip" eval="True"/>
+        <field name="condition_select">none</field>
+        <field name="amount_select">code</field>
+        <field name="amount_python_compute">result =(inputs.NHNOC.amount * contract.wage / 240 * 0.25)</field>
+    </record>
+
+    <record id="rule_employee_hour_sup" model="hr.salary.rule">
+        <field name="name">Horas Suplementarias</field>
+        <field name="code">HOSUP</field>
+        <field name="sequence">6</field>
+        <field name="category_id" ref="HORASEXT"/>
+        <field name="appears_on_payslip" eval="True"/>
+        <field name="condition_select">none</field>
+        <field name="amount_select">code</field>
+        <field name="amount_python_compute">result = (inputs.NHSUP.amount * contract.wage / 240 * 1.5)</field>
+    </record>
+
+    <record id="rule_employee_hour_ext" model="hr.salary.rule">
+        <field name="name">Horas Extraordinarias</field>
+        <field name="code">HOEXT</field>
+        <field name="sequence">7</field>
+        <field name="category_id" ref="HORASEXT"/>
+        <field name="appears_on_payslip" eval="True"/>
+        <field name="condition_select">none</field>
+        <field name="amount_select">code</field>
+        <field name="amount_python_compute">result = (inputs.NHEXT.amount * contract.wage / 240 * 2)</field>
+    </record>
+
+     <record id="rule_employee_fondos_reserva" model="hr.salary.rule">
+        <field name="name">Fondos de Reserva</field>
+        <field name="code">FDR</field>
+        <field name="sequence">93</field>
+        <field name="category_id" ref="om_hr_payroll.BASIC"/>
+        <field name="appears_on_payslip" eval="True"/>
+        <field name="condition_select">python</field>
+        <field name="condition_python">
+days_worked = payslip.date_to - contract.date_start
+if days_worked.days &gt;= 365 and not employee.acumula_fondos_reserva:
+    result = True
+else:
+    result = False
+        </field>
+        <field name="amount_select">code</field>
+        <field name="amount_python_compute">
+result = (contract.wage / 12) / 30 * (worked_days.WORK100.number_of_days + 8)
+        </field>
+    </record>
+
+    <record id="rule_employee_fondos_reserva_acum" model="hr.salary.rule">
+        <field name="name">Fondos de Reserva Acu</field>
+        <field name="code">FDRACU</field>
+        <field name="sequence">94</field>
+        <field name="category_id" ref="BENSOC"/>
+        <field name="appears_on_payslip" eval="False"/>
+        <field name="condition_select">python</field>
+        <field name="condition_python">
+days_worked = payslip.date_to - contract.date_start
+if days_worked.days &gt;= 365 and employee.acumula_fondos_reserva:
+    result = True
+else:
+    result = False
+        </field>
+        <field name="amount_select">code</field>
+        <field name="amount_python_compute">
+result = (contract.wage / 12) / 30 * (worked_days.WORK100.number_of_days + 8)
+        </field>
+    </record>
+
+    <record id="rule_employee_dec_tercero" model="hr.salary.rule">
+        <field name="name">Decimo Tercero</field>
+        <field name="code">XIII</field>
+        <field name="sequence">95</field>
+        <field name="category_id" ref="om_hr_payroll.BASIC"/>
+        <field name="appears_on_payslip" eval="True"/>
+        <field name="condition_select">python</field>
+        <field name="condition_python">result = bool(employee.acumula_xiii_salario == False)</field>
+        <field name="amount_select">code</field>
+        <field name="amount_python_compute">result = (categories.HORASEXT + contract.wage)/12</field>
+    </record>
+
+     <record id="rule_employee_dec_tercero_acum" model="hr.salary.rule">
+        <field name="name">Decimo Tercero Acu</field>
+        <field name="code">XIIIACU</field>
+        <field name="sequence">96</field>
+        <field name="category_id" ref="BENSOC"/>
+        <field name="appears_on_payslip" eval="False"/>
+        <field name="condition_select">python</field>
+        <field name="condition_python">result = bool(employee.acumula_xiii_salario == True)</field>
+        <field name="amount_select">code</field>
+        <field name="amount_python_compute">result = (categories.HORASEXT + contract.wage)/12</field>
+    </record>
+
+    <record id="rule_employee_dec_cuarto" model="hr.salary.rule">
+        <field name="name">Decimo Cuarto</field>
+        <field name="code">XIV</field>
+        <field name="sequence">97</field>
+        <field name="category_id" ref="om_hr_payroll.BASIC"/>
+        <field name="appears_on_payslip" eval="True"/>
+        <field name="condition_select">python</field>
+        <field name="condition_python">result = bool(employee.acumula_xiv_salario == False)</field>
+        <field name="amount_select">code</field>
+        <field name="amount_python_compute">result = 400/12</field>
+    </record>
+
+    <record id="rule_employee_dec_cuarto_acum" model="hr.salary.rule">
+        <field name="name">Decimo Cuarto Acu</field>
+        <field name="code">XIVACU</field>
+        <field name="sequence">98</field>
+        <field name="category_id" ref="BENSOC"/>
+        <field name="appears_on_payslip" eval="False"/>
+        <field name="condition_select">python</field>
+        <field name="condition_python">result = bool(employee.acumula_xiv_salario == True)</field>
+        <field name="amount_select">code</field>
+        <field name="amount_python_compute">result = 400/12</field>
+    </record>
+
+    <record id="rule_employee_iess" model="hr.salary.rule">
+        <field name="name">Aporte Personal IESS 9.45</field>
+        <field name="code">IESS9.45</field>
+        <field name="sequence">99</field>
+        <field name="category_id" ref="om_hr_payroll.DED"/>
+        <field name="appears_on_payslip" eval="True"/>
+        <field name="condition_select">none</field>
+        <field name="amount_select">code</field>
+        <field name="amount_python_compute">result = (categories.HORASEXT + contract.wage) * -0.0945</field>
+    </record>
+
+    <record id="rule_employee_iess_patro" model="hr.salary.rule">
+        <field name="name">Aporte Patronal IESS 11.15</field>
+        <field name="code">IESS11.15</field>
+        <field name="sequence">100</field>
+        <field name="category_id" ref="BENSOC"/>
+        <field name="appears_on_payslip" eval="False"/>
+        <field name="condition_select">none</field>
+        <field name="amount_select">code</field>
+        <field name="amount_python_compute">result = (categories.HORASEXT + contract.wage) * 0.1115</field>
+    </record>
+
+    <record id="rule_employee_pres_quirografario" model="hr.salary.rule">
+        <field name="name">Prestamo Quirografario</field>
+        <field name="code">PRES_QUI</field>
+        <field name="sequence">101</field>
+        <field name="category_id" ref="om_hr_payroll.DED"/>
+        <field name="appears_on_payslip" eval="True"/>
+        <field name="condition_select">none</field>
+        <field name="amount_select">code</field>
+        <field name="amount_python_compute">result = -(inputs.PQUI.amount)</field>
+    </record>
+
+    <record id="rule_employee_pres_hipotecario" model="hr.salary.rule">
+        <field name="name">Prestamo Hipotecario</field>
+        <field name="code">PRES_HIP</field>
+        <field name="sequence">101</field>
+        <field name="category_id" ref="om_hr_payroll.DED"/>
+        <field name="appears_on_payslip" eval="True"/>
+        <field name="condition_select">none</field>
+        <field name="amount_select">code</field>
+        <field name="amount_python_compute">result = -(inputs.PHIP.amount)</field>
+    </record>
+
+    <record id="rule_employee_imp_renta" model="hr.salary.rule">
+        <field name="name">Impuesto Renta</field>
+        <field name="code">IMP_RNTA</field>
+        <field name="sequence">101</field>
+        <field name="category_id" ref="om_hr_payroll.DED"/>
+        <field name="appears_on_payslip" eval="True"/>
+        <field name="condition_select">none</field>
+        <field name="amount_select">code</field>
+        <field name="amount_python_compute">result = -(inputs.IRENTA.amount)</field>
+    </record>
+
+    <record id="rule_employee_multas" model="hr.salary.rule">
+        <field name="name">Multas</field>
+        <field name="code">MULTAS</field>
+        <field name="sequence">101</field>
+        <field name="category_id" ref="om_hr_payroll.DED"/>
+        <field name="appears_on_payslip" eval="True"/>
+        <field name="condition_select">none</field>
+        <field name="amount_select">code</field>
+        <field name="amount_python_compute">result = -(inputs.MLTS.amount)</field>
+    </record>
+
+    <record id="rule_employee_anticipos" model="hr.salary.rule">
+        <field name="name">Anticipos</field>
+        <field name="code">ANTICIPOS</field>
+        <field name="sequence">101</field>
+        <field name="category_id" ref="om_hr_payroll.DED"/>
+        <field name="appears_on_payslip" eval="True"/>
+        <field name="condition_select">none</field>
+        <field name="amount_select">code</field>
+        <field name="amount_python_compute">result = -(inputs.ANTCPS.amount)</field>
+    </record>
+
+    <function model="hr.salary.rule" name="write">
+        <value model="hr.salary.rule" search="[
+            ('code', '=', 'NET')]"/>
+        <value eval="{
+            'name': 'Salario Neto',
+            'sequence': 200,
+            'amount_python_compute': 'result = categories.BASIC + categories.HORASEXT + categories.ALW + categories.DED',
+            }"/>
+    </function>
+
+    <!-- Rule Inputs -->
+
+    <record id="hr_rule_input_nhnoc" model="hr.rule.input">
+        <field name="code">NHNOC</field>
+        <field name="name">Numero de Horas Nocturnas</field>
+        <field name="input_id" ref="rule_employee_hour_noc"/>
+    </record>
+
+    <record id="hr_rule_input_nhsup" model="hr.rule.input">
+        <field name="code">NHSUP</field>
+        <field name="name">Numero de Horas Suplementarias</field>
+        <field name="input_id" ref="rule_employee_hour_sup"/>
+    </record>
+
+    <record id="hr_rule_input_nhext" model="hr.rule.input">
+        <field name="code">NHEXT</field>
+        <field name="name">Numero de Horas Extraordinarias</field>
+        <field name="input_id" ref="rule_employee_hour_ext"/>
+    </record>
+
+     <record id="hr_rule_input_prqui" model="hr.rule.input">
+        <field name="code">PQUI</field>
+        <field name="name">Prestamo Quirografario</field>
+        <field name="input_id" ref="rule_employee_pres_quirografario"/>
+    </record>
+
+     <record id="hr_rule_input_prhip" model="hr.rule.input">
+        <field name="code">PHIP</field>
+        <field name="name">Prestamo Hipotecario</field>
+        <field name="input_id" ref="rule_employee_pres_hipotecario"/>
+    </record>
+
+     <record id="hr_rule_input_imrenta" model="hr.rule.input">
+        <field name="code">IRENTA</field>
+        <field name="name">Impuesto Renta</field>
+        <field name="input_id" ref="rule_employee_imp_renta"/>
+    </record>
+
+     <record id="hr_rule_input_multas" model="hr.rule.input">
+        <field name="code">MLTS</field>
+        <field name="name">Multas</field>
+        <field name="input_id" ref="rule_employee_multas"/>
+    </record>
+
+    <record id="hr_rule_input_anticipos" model="hr.rule.input">
+        <field name="code">ANTCPS</field>
+        <field name="name">Anticipos</field>
+        <field name="input_id" ref="rule_employee_anticipos"/>
+    </record>
+
+    <!-- Salary Structure -->
+    <record id="hr_payroll_salary_structure_employe_frame" model="hr.payroll.structure">
+        <field name="name">Empleado Ecuatoriano</field>
+        <field name="code">base.ec</field>
+        <field eval="[(6, 0, [ref('om_hr_payroll.hr_rule_basic'), ref('rule_employee_hour_noc'),ref('rule_employee_hour_sup'),
+        ref('rule_employee_hour_ext'), ref('rule_employee_fondos_reserva'), ref('rule_employee_fondos_reserva_acum'),
+        ref('rule_employee_dec_tercero'), ref('rule_employee_dec_tercero_acum'),ref('rule_employee_dec_cuarto'),
+        ref('rule_employee_dec_cuarto_acum'),ref('rule_employee_iess'),ref('rule_employee_iess_patro'),
+        ref('rule_employee_pres_quirografario'),ref('rule_employee_pres_hipotecario'),ref('rule_employee_imp_renta'),
+        ref('rule_employee_multas'),ref('rule_employee_anticipos'),ref('om_hr_payroll.hr_rule_net')])]"
+               name="rule_ids"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+
+
+</odoo>
