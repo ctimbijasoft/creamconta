@@ -12,12 +12,12 @@
         <field name="parent_id" eval="False"/>
     </record>
 
-    <function model="hr.salary.rule.category" name="write">
+   <!-- <function model="hr.salary.rule.category" name="write">
         <value model="hr.salary.rule.category" search="[
             ('code', '=', 'DED')]"/>
         <value eval="{
             'is_deductible': 'True',
             }"/>
     </function>
-
+    -->
 </odoo>
