@@ -10,5 +10,5 @@ class AccountMove(models.Model):
     ref_account = fields.Char(string='Referencia Factura', required=False)
 
     # ==== SRI attachment fields ====
-    l10n_ec_edi_sri_access_key = fields.Char(string='UUID', copy=True,
+    l10n_ec_edi_sri_access_key = fields.Char(string='UUID Access Key', copy=True,
                                        help='Folio in electronic invoice, is returned by SRI when send to stamp.')

@@ -6,11 +6,9 @@
     'author': 'Jasoft Cía. Ltda.',
     'category': 'Accounting/Localizations/EDI',
     'summary': 'Ecuatorian Localization for EDI documents',
-    'description': """
-EDI Ecuatorian Localization
+    'description': """EDI Ecuatorian Localization
 ========================
 Allow the user to generate the EDI document for Ecuatorian invoicing and other electronic receipts
-
 This module allows the creation of the EDI documents and the communication with the SRI  to autorization them.
     """,
     'depends': [

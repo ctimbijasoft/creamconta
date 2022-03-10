@@ -1139,6 +1139,10 @@ Content-Disposition: form-data; name="xml"; filename="xml"
         return 'PPD' in reconciled_invoices.mapped('l10n_ec_edi_payment_policy')'''
 
     def _l10n_ec_edi_cron_send_to_sri(self):
+
+        if self.code != 'sri_ec':
+            return 
+
         to_process = self.env['account.move'].search([
             ('move_type', 'in', ['out_invoice', 'out_refund']),
             ('edi_state', 'in', ['to_send']),
@@ -1290,6 +1294,7 @@ Content-Disposition: form-data; name="xml"; filename="xml"
         # OVERRIDE
         _logger.info('_cancel_invoice_edi')
         edi_result = super()._cancel_invoice_edi(invoices, test_mode=test_mode)
+        
         if self.code != 'sri_ec':
             return edi_result
 
