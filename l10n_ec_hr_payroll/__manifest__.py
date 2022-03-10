@@ -5,7 +5,7 @@
     'name': 'Ecuadorian Payroll',
     'category': 'Human Resources/Payroll',
     'author': 'Jasoft',
-    'depends': ['om_hr_payroll', 'l10n_ec'],
+    'depends': ['hr_payroll', 'l10n_ec'],
     'description': """
 Ecuadorian Payroll Rules.
 =====================
