@@ -28,6 +28,7 @@
         <field name="condition_select">none</field>
         <field name="amount_select">code</field>
         <field name="amount_python_compute">result =(inputs.NHNOC.amount * contract.wage / 240 * 0.25)</field>
+        <field name="struct_id" ref="hr_payroll_salary_structure_employe_frame"/>
     </record>
 
     <record id="rule_employee_hour_sup" model="hr.salary.rule">
@@ -39,6 +40,7 @@
         <field name="condition_select">none</field>
         <field name="amount_select">code</field>
         <field name="amount_python_compute">result = (inputs.NHSUP.amount * contract.wage / 240 * 1.5)</field>
+        <field name="struct_id" ref="hr_payroll_salary_structure_employe_frame"/>
     </record>
 
     <record id="rule_employee_hour_ext" model="hr.salary.rule">
@@ -50,6 +52,7 @@
         <field name="condition_select">none</field>
         <field name="amount_select">code</field>
         <field name="amount_python_compute">result = (inputs.NHEXT.amount * contract.wage / 240 * 2)</field>
+        <field name="struct_id" ref="hr_payroll_salary_structure_employe_frame"/>
     </record>
 
      <record id="rule_employee_fondos_reserva" model="hr.salary.rule">
@@ -70,6 +73,7 @@ else:
         <field name="amount_python_compute">
 result = (contract.wage / 12) / 30 * (worked_days.WORK100.number_of_days + 8)
         </field>
+        <field name="struct_id" ref="hr_payroll_salary_structure_employe_frame"/>
     </record>
 
     <record id="rule_employee_fondos_reserva_acum" model="hr.salary.rule">
@@ -90,6 +94,7 @@ else:
         <field name="amount_python_compute">
 result = (contract.wage / 12) / 30 * (worked_days.WORK100.number_of_days + 8)
         </field>
+        <field name="struct_id" ref="hr_payroll_salary_structure_employe_frame"/>
     </record>
 
     <record id="rule_employee_dec_tercero" model="hr.salary.rule">
@@ -115,6 +120,7 @@ result = (contract.wage / 12) / 30 * (worked_days.WORK100.number_of_days + 8)
         <field name="condition_python">result = bool(employee.acumula_xiii_salario == True)</field>
         <field name="amount_select">code</field>
         <field name="amount_python_compute">result = (categories.HORASEXT + contract.wage)/12</field>
+        <field name="struct_id" ref="hr_payroll_salary_structure_employe_frame"/>
     </record>
 
     <record id="rule_employee_dec_cuarto" model="hr.salary.rule">
@@ -127,6 +133,7 @@ result = (contract.wage / 12) / 30 * (worked_days.WORK100.number_of_days + 8)
         <field name="condition_python">result = bool(employee.acumula_xiv_salario == False)</field>
         <field name="amount_select">code</field>
         <field name="amount_python_compute">result = 400/12</field>
+        <field name="struct_id" ref="hr_payroll_salary_structure_employe_frame"/>
     </record>
 
     <record id="rule_employee_dec_cuarto_acum" model="hr.salary.rule">
@@ -139,6 +146,7 @@ result = (contract.wage / 12) / 30 * (worked_days.WORK100.number_of_days + 8)
         <field name="condition_python">result = bool(employee.acumula_xiv_salario == True)</field>
         <field name="amount_select">code</field>
         <field name="amount_python_compute">result = 400/12</field>
+        <field name="struct_id" ref="hr_payroll_salary_structure_employe_frame"/>
     </record>
 
     <record id="rule_employee_iess" model="hr.salary.rule">
@@ -150,6 +158,7 @@ result = (contract.wage / 12) / 30 * (worked_days.WORK100.number_of_days + 8)
         <field name="condition_select">none</field>
         <field name="amount_select">code</field>
         <field name="amount_python_compute">result = (categories.HORASEXT + contract.wage) * -0.0945</field>
+        <field name="struct_id" ref="hr_payroll_salary_structure_employe_frame"/>
     </record>
 
     <record id="rule_employee_iess_patro" model="hr.salary.rule">
@@ -161,6 +170,7 @@ result = (contract.wage / 12) / 30 * (worked_days.WORK100.number_of_days + 8)
         <field name="condition_select">none</field>
         <field name="amount_select">code</field>
         <field name="amount_python_compute">result = (categories.HORASEXT + contract.wage) * 0.1115</field>
+        <field name="struct_id" ref="hr_payroll_salary_structure_employe_frame"/>
     </record>
 
     <record id="rule_employee_pres_quirografario" model="hr.salary.rule">
@@ -172,6 +182,7 @@ result = (contract.wage / 12) / 30 * (worked_days.WORK100.number_of_days + 8)
         <field name="condition_select">none</field>
         <field name="amount_select">code</field>
         <field name="amount_python_compute">result = -(inputs.PQUI.amount)</field>
+        <field name="struct_id" ref="hr_payroll_salary_structure_employe_frame"/>
     </record>
 
     <record id="rule_employee_pres_hipotecario" model="hr.salary.rule">
@@ -183,6 +194,7 @@ result = (contract.wage / 12) / 30 * (worked_days.WORK100.number_of_days + 8)
         <field name="condition_select">none</field>
         <field name="amount_select">code</field>
         <field name="amount_python_compute">result = -(inputs.PHIP.amount)</field>
+        <field name="struct_id" ref="hr_payroll_salary_structure_employe_frame"/>
     </record>
 
     <record id="rule_employee_imp_renta" model="hr.salary.rule">
@@ -194,6 +206,7 @@ result = (contract.wage / 12) / 30 * (worked_days.WORK100.number_of_days + 8)
         <field name="condition_select">none</field>
         <field name="amount_select">code</field>
         <field name="amount_python_compute">result = -(inputs.IRENTA.amount)</field>
+        <field name="struct_id" ref="hr_payroll_salary_structure_employe_frame"/>
     </record>
 
     <record id="rule_employee_multas" model="hr.salary.rule">
@@ -205,6 +218,7 @@ result = (contract.wage / 12) / 30 * (worked_days.WORK100.number_of_days + 8)
         <field name="condition_select">none</field>
         <field name="amount_select">code</field>
         <field name="amount_python_compute">result = -(inputs.MLTS.amount)</field>
+        <field name="struct_id" ref="hr_payroll_salary_structure_employe_frame"/>
     </record>
 
     <record id="rule_employee_anticipos" model="hr.salary.rule">
@@ -216,6 +230,7 @@ result = (contract.wage / 12) / 30 * (worked_days.WORK100.number_of_days + 8)
         <field name="condition_select">none</field>
         <field name="amount_select">code</field>
         <field name="amount_python_compute">result = -(inputs.ANTCPS.amount)</field>
+        <field name="struct_id" ref="hr_payroll_salary_structure_employe_frame"/>
     </record>
 
     <function model="hr.salary.rule" name="write">
@@ -277,7 +292,4 @@ result = (contract.wage / 12) / 30 * (worked_days.WORK100.number_of_days + 8)
         <field name="name">Anticipos</field>
         <field name="input_id" ref="rule_employee_anticipos"/>
     </record>
-
-   
-
 </odoo>
