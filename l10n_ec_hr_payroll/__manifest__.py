@@ -9,7 +9,7 @@
     'description': """
 Ecuadorian Payroll Rules.
 =====================
-    - Configuration of om_hr_payroll for Ecuadorian localization
+    - Configuration of hr_payroll for Ecuadorian localization
     """,
     'data': [
         'data/l10n_ec_hr_payroll_data.xml',

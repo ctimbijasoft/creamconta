@@ -5,12 +5,12 @@
     <record id="hr_payroll_salary_structure_employe_frame" model="hr.payroll.structure">
         <field name="name">Empleado Ecuatoriano</field>
         <!--
-            <field eval="[(6, 0, [ref('om_hr_payroll.hr_rule_basic'), ref('rule_employee_hour_noc'),ref('rule_employee_hour_sup'),
+            <field eval="[(6, 0, [ref('hr_payroll.hr_rule_basic'), ref('rule_employee_hour_noc'),ref('rule_employee_hour_sup'),
         ref('rule_employee_hour_ext'), ref('rule_employee_fondos_reserva'), ref('rule_employee_fondos_reserva_acum'),
         ref('rule_employee_dec_tercero'), ref('rule_employee_dec_tercero_acum'),ref('rule_employee_dec_cuarto'),
         ref('rule_employee_dec_cuarto_acum'),ref('rule_employee_iess'),ref('rule_employee_iess_patro'),
         ref('rule_employee_pres_quirografario'),ref('rule_employee_pres_hipotecario'),ref('rule_employee_imp_renta'),
-        ref('rule_employee_multas'),ref('rule_employee_anticipos'),ref('om_hr_payroll.hr_rule_net')])]"
+        ref('rule_employee_multas'),ref('rule_employee_anticipos'),ref('hr_payroll.hr_rule_net')])]"
                name="rule_ids"/>
         <field name="company_id" ref="base.main_company"/>
         -->
@@ -61,7 +61,7 @@
         <field name="name">Fondos de Reserva</field>
         <field name="code">FDR</field>
         <field name="sequence">93</field>
-        <field name="category_id" ref="om_hr_payroll.BASIC"/>
+        <field name="category_id" ref="hr_payroll.BASIC"/>
         <field name="appears_on_payslip" eval="True"/>
         <field name="condition_select">python</field>
         <field name="condition_python">
@@ -103,7 +103,7 @@ result = (contract.wage / 12) / 30 * (worked_days.WORK100.number_of_days + 8)
         <field name="name">Decimo Tercero</field>
         <field name="code">XIII</field>
         <field name="sequence">95</field>
-        <field name="category_id" ref="om_hr_payroll.BASIC"/>
+        <field name="category_id" ref="hr_payroll.BASIC"/>
         <field name="appears_on_payslip" eval="True"/>
         <field name="condition_select">python</field>
         <field name="condition_python">result = bool(employee.acumula_xiii_salario == False)</field>
@@ -129,7 +129,7 @@ result = (contract.wage / 12) / 30 * (worked_days.WORK100.number_of_days + 8)
         <field name="name">Decimo Cuarto</field>
         <field name="code">XIV</field>
         <field name="sequence">97</field>
-        <field name="category_id" ref="om_hr_payroll.BASIC"/>
+        <field name="category_id" ref="hr_payroll.BASIC"/>
         <field name="appears_on_payslip" eval="True"/>
         <field name="condition_select">python</field>
         <field name="condition_python">result = bool(employee.acumula_xiv_salario == False)</field>
@@ -155,7 +155,7 @@ result = (contract.wage / 12) / 30 * (worked_days.WORK100.number_of_days + 8)
         <field name="name">Aporte Personal IESS 9.45</field>
         <field name="code">IESS9.45</field>
         <field name="sequence">99</field>
-        <field name="category_id" ref="om_hr_payroll.DED"/>
+        <field name="category_id" ref="hr_payroll.DED"/>
         <field name="appears_on_payslip" eval="True"/>
         <field name="condition_select">none</field>
         <field name="amount_select">code</field>
@@ -179,7 +179,7 @@ result = (contract.wage / 12) / 30 * (worked_days.WORK100.number_of_days + 8)
         <field name="name">Prestamo Quirografario</field>
         <field name="code">PRES_QUI</field>
         <field name="sequence">101</field>
-        <field name="category_id" ref="om_hr_payroll.DED"/>
+        <field name="category_id" ref="hr_payroll.DED"/>
         <field name="appears_on_payslip" eval="True"/>
         <field name="condition_select">none</field>
         <field name="amount_select">code</field>
@@ -191,7 +191,7 @@ result = (contract.wage / 12) / 30 * (worked_days.WORK100.number_of_days + 8)
         <field name="name">Prestamo Hipotecario</field>
         <field name="code">PRES_HIP</field>
         <field name="sequence">101</field>
-        <field name="category_id" ref="om_hr_payroll.DED"/>
+        <field name="category_id" ref="hr_payroll.DED"/>
         <field name="appears_on_payslip" eval="True"/>
         <field name="condition_select">none</field>
         <field name="amount_select">code</field>
@@ -203,7 +203,7 @@ result = (contract.wage / 12) / 30 * (worked_days.WORK100.number_of_days + 8)
         <field name="name">Impuesto Renta</field>
         <field name="code">IMP_RNTA</field>
         <field name="sequence">101</field>
-        <field name="category_id" ref="om_hr_payroll.DED"/>
+        <field name="category_id" ref="hr_payroll.DED"/>
         <field name="appears_on_payslip" eval="True"/>
         <field name="condition_select">none</field>
         <field name="amount_select">code</field>
@@ -215,7 +215,7 @@ result = (contract.wage / 12) / 30 * (worked_days.WORK100.number_of_days + 8)
         <field name="name">Multas</field>
         <field name="code">MULTAS</field>
         <field name="sequence">101</field>
-        <field name="category_id" ref="om_hr_payroll.DED"/>
+        <field name="category_id" ref="hr_payroll.DED"/>
         <field name="appears_on_payslip" eval="True"/>
         <field name="condition_select">none</field>
         <field name="amount_select">code</field>
@@ -227,7 +227,7 @@ result = (contract.wage / 12) / 30 * (worked_days.WORK100.number_of_days + 8)
         <field name="name">Anticipos</field>
         <field name="code">ANTICIPOS</field>
         <field name="sequence">101</field>
-        <field name="category_id" ref="om_hr_payroll.DED"/>
+        <field name="category_id" ref="hr_payroll.DED"/>
         <field name="appears_on_payslip" eval="True"/>
         <field name="condition_select">none</field>
         <field name="amount_select">code</field>
