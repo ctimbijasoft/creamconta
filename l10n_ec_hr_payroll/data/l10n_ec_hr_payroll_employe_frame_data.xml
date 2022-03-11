@@ -10,8 +10,8 @@
         ref('rule_employee_dec_cuarto_acum'),ref('rule_employee_iess'),ref('rule_employee_iess_patro'),
         ref('rule_employee_pres_quirografario'),ref('rule_employee_pres_hipotecario'),ref('rule_employee_imp_renta'),
         ref('rule_employee_multas'),ref('rule_employee_anticipos'),ref('om_hr_payroll.hr_rule_net')])]"
-               name="rule_ids"/>-->
-        <field name="company_id" ref="base.main_company"/>
+               name="rule_ids"/>
+        <field name="company_id" ref="base.main_company"/>-->
         <field name="country_id" eval="False"/>
         
     </record>
