@@ -4,16 +4,17 @@
      <!-- Salary Structure -->
     <record id="hr_payroll_salary_structure_employe_frame" model="hr.payroll.structure">
         <field name="name">Empleado Ecuatoriano</field>
-        <!--<field eval="[(6, 0, [ref('om_hr_payroll.hr_rule_basic'), ref('rule_employee_hour_noc'),ref('rule_employee_hour_sup'),
+        <!--
+            <field eval="[(6, 0, [ref('om_hr_payroll.hr_rule_basic'), ref('rule_employee_hour_noc'),ref('rule_employee_hour_sup'),
         ref('rule_employee_hour_ext'), ref('rule_employee_fondos_reserva'), ref('rule_employee_fondos_reserva_acum'),
         ref('rule_employee_dec_tercero'), ref('rule_employee_dec_tercero_acum'),ref('rule_employee_dec_cuarto'),
         ref('rule_employee_dec_cuarto_acum'),ref('rule_employee_iess'),ref('rule_employee_iess_patro'),
         ref('rule_employee_pres_quirografario'),ref('rule_employee_pres_hipotecario'),ref('rule_employee_imp_renta'),
         ref('rule_employee_multas'),ref('rule_employee_anticipos'),ref('om_hr_payroll.hr_rule_net')])]"
                name="rule_ids"/>
-        <field name="company_id" ref="base.main_company"/>-->
+        <field name="company_id" ref="base.main_company"/>
+        -->
         <field name="country_id" eval="False"/>
-        
     </record>
 
 
