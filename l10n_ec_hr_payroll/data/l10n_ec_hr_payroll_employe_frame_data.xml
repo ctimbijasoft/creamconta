@@ -1,6 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
+     <!-- Salary Structure -->
+    <record id="hr_payroll_salary_structure_employe_frame" model="hr.payroll.structure">
+        <field name="name">Empleado Ecuatoriano</field>
+        <field name="code">base.ec</field>
+        <!--<field eval="[(6, 0, [ref('om_hr_payroll.hr_rule_basic'), ref('rule_employee_hour_noc'),ref('rule_employee_hour_sup'),
+        ref('rule_employee_hour_ext'), ref('rule_employee_fondos_reserva'), ref('rule_employee_fondos_reserva_acum'),
+        ref('rule_employee_dec_tercero'), ref('rule_employee_dec_tercero_acum'),ref('rule_employee_dec_cuarto'),
+        ref('rule_employee_dec_cuarto_acum'),ref('rule_employee_iess'),ref('rule_employee_iess_patro'),
+        ref('rule_employee_pres_quirografario'),ref('rule_employee_pres_hipotecario'),ref('rule_employee_imp_renta'),
+        ref('rule_employee_multas'),ref('rule_employee_anticipos'),ref('om_hr_payroll.hr_rule_net')])]"
+               name="rule_ids"/>-->
+        <field name="company_id" ref="base.main_company"/>
+        <field name="country_id" eval="False"/>
+    </record>
+
+
     <!-- HR SALARY RULES-->
 
     <record id="rule_employee_hour_noc" model="hr.salary.rule">
@@ -86,6 +102,7 @@ result = (contract.wage / 12) / 30 * (worked_days.WORK100.number_of_days + 8)
         <field name="condition_python">result = bool(employee.acumula_xiii_salario == False)</field>
         <field name="amount_select">code</field>
         <field name="amount_python_compute">result = (categories.HORASEXT + contract.wage)/12</field>
+        <field name="struct_id" ref="hr_payroll_salary_structure_employe_frame"/>
     </record>
 
      <record id="rule_employee_dec_tercero_acum" model="hr.salary.rule">
@@ -261,19 +278,6 @@ result = (contract.wage / 12) / 30 * (worked_days.WORK100.number_of_days + 8)
         <field name="input_id" ref="rule_employee_anticipos"/>
     </record>
 
-    <!-- Salary Structure -->
-    <record id="hr_payroll_salary_structure_employe_frame" model="hr.payroll.structure">
-        <field name="name">Empleado Ecuatoriano</field>
-        <field name="code">base.ec</field>
-        <field eval="[(6, 0, [ref('om_hr_payroll.hr_rule_basic'), ref('rule_employee_hour_noc'),ref('rule_employee_hour_sup'),
-        ref('rule_employee_hour_ext'), ref('rule_employee_fondos_reserva'), ref('rule_employee_fondos_reserva_acum'),
-        ref('rule_employee_dec_tercero'), ref('rule_employee_dec_tercero_acum'),ref('rule_employee_dec_cuarto'),
-        ref('rule_employee_dec_cuarto_acum'),ref('rule_employee_iess'),ref('rule_employee_iess_patro'),
-        ref('rule_employee_pres_quirografario'),ref('rule_employee_pres_hipotecario'),ref('rule_employee_imp_renta'),
-        ref('rule_employee_multas'),ref('rule_employee_anticipos'),ref('om_hr_payroll.hr_rule_net')])]"
-               name="rule_ids"/>
-        <field name="company_id" ref="base.main_company"/>
-    </record>
-
+   
 
 </odoo>
